@@ -1,3 +1,31 @@
+# Protocolo
+
+Quiz sobre protocolos en dinámicas D/s. Next.js 14 + Tailwind, PostgreSQL 16
+(`protocolo-db`), desplegado con Dokploy en https://protocolo.turel.es
+(auto-deploy al hacer push a `main`).
+
+## Base de datos: migraciones y semilla (manual)
+
+Las migraciones **no se ejecutan en el deploy**: se lanzan a mano cuando haga
+falta. `protocolo-db` solo es accesible desde la red `dokploy-network`, así que
+se ejecutan desde un contenedor Node conectado a ella, con las variables de
+`.env.local`:
+
+```bash
+# Aplica las migraciones pendientes de db/migrations/ (idempotente)
+docker run --rm --network dokploy-network -v "$PWD":/app -w /app node:20-alpine \
+  node --env-file=.env.local scripts/migrate.mjs
+
+# Carga/actualiza las preguntas de db/seed/questions.json (idempotente)
+docker run --rm --network dokploy-network -v "$PWD":/app -w /app node:20-alpine \
+  node --env-file=.env.local scripts/seed.mjs
+```
+
+Si se añade una migración nueva (`db/migrations/00X_*.sql`), hay que aplicarla
+**antes** de hacer push del código que la necesita.
+
+---
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

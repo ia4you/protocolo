@@ -34,6 +34,13 @@ const ICONS = {
       <circle cx="50" cy="44" r="2" fill="currentColor" />
     </>
   ),
+  // Pantalla final del bloque
+  shield: (
+    <>
+      <path d="M32 12 L44 24 L44 40 L32 52 L20 40 L20 24 Z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
+      <path d="M32 22 L32 42" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+    </>
+  ),
 };
 
 // Para nombres desconocidos: un círculo simple, así el hueco no se descuadra
