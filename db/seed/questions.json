@@ -3,7 +3,12 @@
     { "slug": "trato", "name": "Dinámica de poder · Trato", "icon": "diamond", "position": 0 },
     { "slug": "comunidad", "name": "Espacio · Comunidad", "icon": "rings", "position": 1 },
     { "slug": "discrecion", "name": "Dinámica de poder · Discreción", "icon": "threshold", "position": 2 },
-    { "slug": "comunicacion", "name": "Dinámica de poder · Comunicación", "icon": "route", "position": 3 }
+    { "slug": "comunicacion", "name": "Dinámica de poder · Comunicación", "icon": "route", "position": 3 },
+    { "slug": "postura", "name": "Dinámica de poder · Postura", "icon": "ladder", "position": 4 },
+    { "slug": "servicio", "name": "Dinámica de poder · Servicio", "icon": "thread", "position": 5 },
+    { "slug": "apariencia", "name": "Dinámica de poder · Apariencia y símbolos", "icon": "shield", "position": 6 },
+    { "slug": "disciplina", "name": "Dinámica de poder · Disciplina y corrección", "icon": "diamond", "position": 7 },
+    { "slug": "permisos", "name": "Dinámica de poder · Permiso y acceso", "icon": "route", "position": 8 }
   ],
   "questions": [
     {
@@ -169,6 +174,149 @@
         { "text": "Ignorarlo, el sumiso debe hablar por sí mismo siempre", "is_correct": false, "position": 0 },
         { "text": "Preguntar directamente y abrir espacio para hablarlo", "is_correct": true, "position": 1 },
         { "text": "Asumir que está bien porque no usó la palabra de seguridad", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "postura",
+      "position": 0,
+      "text": "¿Es obligatorio arrodillarse ante el Amo/Ama en toda dinámica D/s?",
+      "explanation": "No hay una postura \"correcta\" fija. Arrodillarse, bajar la mirada o cualquier otro gesto es <b>una elección de esa pareja</b>, no una norma general.",
+      "options": [
+        { "text": "Sí, es un gesto universal del BDSM", "is_correct": false, "position": 0 },
+        { "text": "No, depende de si esa pareja lo ha acordado", "is_correct": true, "position": 1 },
+        { "text": "Solo en dinámicas M/s, nunca en D/s", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "postura",
+      "position": 1,
+      "text": "Si el sumiso tiene una lesión y una postura acordada le hace daño, ¿qué debería pasar?",
+      "explanation": "<b>El bienestar físico siempre tiene prioridad</b> sobre cualquier protocolo. Un buen Amo/Ama ajusta la postura o la pausa sin que haga falta pedirlo con miedo.",
+      "options": [
+        { "text": "Mantenerla igual, el protocolo no se rompe por eso", "is_correct": false, "position": 0 },
+        { "text": "Adaptarla o suspenderla, la salud física va primero", "is_correct": true, "position": 1 },
+        { "text": "Solo se puede cambiar si el Amo/Ama lo nota", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "postura",
+      "position": 2,
+      "text": "El contacto visual en presencia del Amo/Ama:",
+      "explanation": "Como con el resto de posturas, <b>se acuerda entre la pareja</b>. Algunas dinámicas usan evitar la mirada como protocolo, otras no lo incluyen en absoluto.",
+      "options": [
+        { "text": "Siempre se evita, es la norma en el BDSM", "is_correct": false, "position": 0 },
+        { "text": "Se decide entre ambos, no hay una regla fija", "is_correct": true, "position": 1 },
+        { "text": "Siempre se mantiene fijo como señal de respeto", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "servicio",
+      "position": 0,
+      "text": "Las tareas o rutinas que un sumiso realiza para su Amo/Ama (domésticas, personales, rituales):",
+      "explanation": "El \"servicio\" no tiene un contenido fijo. Puede ser algo simbólico o muy concreto — <b>lo define esa pareja</b>, no una plantilla general.",
+      "options": [
+        { "text": "Son siempre iguales en toda dinámica de servicio", "is_correct": false, "position": 0 },
+        { "text": "Se acuerdan según lo que ambos quieran incluir", "is_correct": true, "position": 1 },
+        { "text": "Son obligatorias solo si viven juntos", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "servicio",
+      "position": 1,
+      "text": "Si el sumiso no cumple una tarea acordada, ¿qué es lo razonable?",
+      "explanation": "Antes de asumir incumplimiento, <b>se pregunta</b>. Puede haber cansancio, un imprevisto o el propio límite cambiando — el protocolo no sustituye la comunicación.",
+      "options": [
+        { "text": "Aplicar automáticamente un castigo físico", "is_correct": false, "position": 0 },
+        { "text": "Hablarlo primero: puede haber un motivo válido", "is_correct": true, "position": 1 },
+        { "text": "Ignorarlo, las tareas no importan realmente", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "servicio",
+      "position": 2,
+      "text": "Pedir permiso para necesidades básicas (comer, dormir, etc.) dentro de un protocolo de servicio:",
+      "explanation": "Cuando existe, <b>su nivel varía mucho</b> — desde algo simbólico hasta más literal. Nunca es un estándar que aplique a todas las parejas por igual.",
+      "options": [
+        { "text": "Es obligatorio en toda dinámica D/s", "is_correct": false, "position": 0 },
+        { "text": "Es una práctica opcional, de intensidad muy variable", "is_correct": true, "position": 1 },
+        { "text": "Solo existe en teoría, nadie lo hace realmente", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "apariencia",
+      "position": 0,
+      "text": "Un collar en una relación D/s o M/s suele representar:",
+      "explanation": "El collar (o cualquier símbolo equivalente: anillo, brazalete) es <b>un símbolo que la pareja decide qué significa</b> — no hay un significado oficial único.",
+      "options": [
+        { "text": "Una simple decoración sin significado", "is_correct": false, "position": 0 },
+        { "text": "Un símbolo de pertenencia o compromiso acordado", "is_correct": true, "position": 1 },
+        { "text": "Una obligación legal dentro de la comunidad BDSM", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "apariencia",
+      "position": 1,
+      "text": "¿Puede un sumiso pedir dejar de usar su símbolo (collar, anillo, etc.)?",
+      "explanation": "Como cualquier otro elemento del protocolo, <b>puede renegociarse</b>. Ningún símbolo es irreversible si el consentimiento cambia.",
+      "options": [
+        { "text": "No, una vez puesto es definitivo", "is_correct": false, "position": 0 },
+        { "text": "Sí, es parte del consentimiento continuo", "is_correct": true, "position": 1 },
+        { "text": "Solo si el Amo/Ama lo decide primero", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "disciplina",
+      "position": 0,
+      "text": "La diferencia clave entre una \"corrección\" acordada y un castigo real de control es:",
+      "explanation": "Una corrección tiene sentido cuando <b>ambos han acordado de antemano</b> qué implica y para qué sirve. Si se usa para intimidar o controlar fuera de eso, deja de ser protocolo y se vuelve abuso.",
+      "options": [
+        { "text": "No hay diferencia, es lo mismo con otro nombre", "is_correct": false, "position": 0 },
+        { "text": "La corrección se pacta de antemano; el control real no", "is_correct": true, "position": 1 },
+        { "text": "La corrección siempre implica dolor físico", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "disciplina",
+      "position": 1,
+      "text": "Si un Amo/Ama aplica una \"corrección\" que nunca se había hablado, ¿qué es esto?",
+      "explanation": "Improvisar consecuencias no acordadas <b>rompe el consentimiento</b>. Cualquier corrección debería estar dentro de lo ya negociado.",
+      "options": [
+        { "text": "Parte normal de ser Dominante", "is_correct": false, "position": 0 },
+        { "text": "Una señal de alerta: se salió de lo acordado", "is_correct": true, "position": 1 },
+        { "text": "Algo que el sumiso debe aceptar igual", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "disciplina",
+      "position": 2,
+      "text": "¿Las correcciones pueden incluir castigos puramente emocionales (ignorar, humillar sin acuerdo previo)?",
+      "explanation": "Cualquier forma de corrección — física o emocional — <b>necesita haberse hablado antes</b>. Sin ese acuerdo, deja de ser protocolo.",
+      "options": [
+        { "text": "Sí, siempre que sea un Dominante quien lo decida", "is_correct": false, "position": 0 },
+        { "text": "Solo si se acordó explícitamente ese tipo de dinámica", "is_correct": true, "position": 1 },
+        { "text": "Nunca, solo se permite corrección física", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "permisos",
+      "position": 0,
+      "text": "Pedir permiso para tocar objetos personales del Amo/Ama o iniciar contacto físico:",
+      "explanation": "Como con casi todo el protocolo, <b>es una decisión de pareja</b>, no una regla general del BDSM.",
+      "options": [
+        { "text": "Es obligatorio siempre, sin excepción", "is_correct": false, "position": 0 },
+        { "text": "Depende de lo que esa pareja haya establecido", "is_correct": true, "position": 1 },
+        { "text": "Nunca se pide permiso para esto", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "permisos",
+      "position": 1,
+      "text": "Si el protocolo incluye pedir permiso para algo cotidiano y un día resulta incómodo, ¿qué se hace?",
+      "explanation": "El malestar con una parte del protocolo <b>es información</b>, no una falta. Se habla y se adapta.",
+      "options": [
+        { "text": "Se sigue igual, el protocolo no cambia nunca", "is_correct": false, "position": 0 },
+        { "text": "Se comenta y se ajusta si hace falta", "is_correct": true, "position": 1 },
+        { "text": "Se rompe la relación directamente", "is_correct": false, "position": 2 }
       ]
     }
   ]

@@ -34,7 +34,23 @@ const ICONS = {
       <circle cx="50" cy="44" r="2" fill="currentColor" />
     </>
   ),
-  // Pantalla final del bloque
+  ladder: (
+    <>
+      <path d="M20 14 V50" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+      <path d="M44 14 V50" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+      <path d="M20 26 H44" stroke="currentColor" strokeWidth="1.6" />
+      <path d="M20 38 H44" stroke="currentColor" strokeWidth="1.6" opacity="0.4" />
+    </>
+  ),
+  thread: (
+    <path
+      d="M16 46 V26 C16 18 24 14 32 18 C40 22 40 30 32 32 C24 34 24 42 32 44 C40 46 48 42 48 34 V20"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+    />
+  ),
+  // Pantalla final del bloque (y categoría "apariencia")
   shield: (
     <>
       <path d="M32 12 L44 24 L44 40 L32 52 L20 40 L20 24 Z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
