@@ -1,0 +1,48 @@
+// Iconos de línea de las categorías. Usan currentColor, así que toman el
+// color del texto del contenedor (ej. className="text-rose-300").
+
+const ICONS = {
+  diamond: (
+    <>
+      <rect x="17" y="17" width="30" height="30" stroke="currentColor" strokeWidth="1.6" transform="rotate(45 32 32)" />
+      <circle cx="32" cy="32" r="3.5" stroke="currentColor" strokeWidth="1.6" />
+    </>
+  ),
+  rings: (
+    <>
+      <circle cx="32" cy="32" r="18" stroke="currentColor" strokeWidth="1.6" />
+      <circle cx="32" cy="32" r="18" stroke="currentColor" strokeWidth="1.6" strokeDasharray="4 6" transform="rotate(20 32 32)" opacity="0.5" />
+      <circle cx="32" cy="32" r="2.2" fill="currentColor" />
+    </>
+  ),
+  threshold: (
+    <>
+      <path d="M14 44 Q32 12 50 44" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+      <line x1="14" y1="44" x2="50" y2="44" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+      <line x1="26" y1="44" x2="26" y2="52" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+      <line x1="38" y1="44" x2="38" y2="52" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+    </>
+  ),
+  route: (
+    <>
+      <line x1="32" y1="10" x2="32" y2="54" stroke="currentColor" strokeWidth="1.6" />
+      <line x1="14" y1="22" x2="50" y2="22" stroke="currentColor" strokeWidth="1.6" />
+      <line x1="14" y1="22" x2="14" y2="30" stroke="currentColor" strokeWidth="1.6" />
+      <line x1="50" y1="22" x2="50" y2="44" stroke="currentColor" strokeWidth="1.6" />
+      <circle cx="32" cy="10" r="2" fill="currentColor" />
+      <circle cx="14" cy="30" r="2" fill="currentColor" />
+      <circle cx="50" cy="44" r="2" fill="currentColor" />
+    </>
+  ),
+};
+
+// Para nombres desconocidos: un círculo simple, así el hueco no se descuadra
+const FALLBACK = <circle cx="32" cy="32" r="18" stroke="currentColor" strokeWidth="1.6" />;
+
+export default function ProtocolIcon({ name, className = "h-8 w-8", ...props }) {
+  return (
+    <svg viewBox="0 0 64 64" fill="none" className={className} aria-hidden="true" {...props}>
+      {ICONS[name] ?? FALLBACK}
+    </svg>
+  );
+}
