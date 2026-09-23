@@ -8,7 +8,8 @@
     { "slug": "servicio", "name": "Dinámica de poder · Servicio", "icon": "thread", "position": 5 },
     { "slug": "apariencia", "name": "Dinámica de poder · Apariencia y símbolos", "icon": "shield", "position": 6 },
     { "slug": "disciplina", "name": "Dinámica de poder · Disciplina y corrección", "icon": "diamond", "position": 7 },
-    { "slug": "permisos", "name": "Dinámica de poder · Permiso y acceso", "icon": "route", "position": 8 }
+    { "slug": "permisos", "name": "Dinámica de poder · Permiso y acceso", "icon": "route", "position": 8 },
+    { "slug": "negociacion", "name": "Consentimiento · Negociación previa", "icon": "route", "position": 9 }
   ],
   "questions": [
     {
@@ -317,6 +318,94 @@
         { "text": "Se sigue igual, el protocolo no cambia nunca", "is_correct": false, "position": 0 },
         { "text": "Se comenta y se ajusta si hace falta", "is_correct": true, "position": 1 },
         { "text": "Se rompe la relación directamente", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "negociacion",
+      "position": 0,
+      "text": "Antes de empezar una dinámica nueva con alguien, ¿qué es imprescindible hacer primero?",
+      "explanation": "La negociación previa <b>no es opcional</b>, sea cual sea la intensidad de la dinámica. Es la base de todo lo demás.",
+      "options": [
+        { "text": "Empezar y ver qué tal va", "is_correct": false, "position": 0 },
+        { "text": "Hablar de límites, expectativas y palabra de seguridad", "is_correct": true, "position": 1 },
+        { "text": "Solo hace falta si es una relación M/s", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "negociacion",
+      "position": 1,
+      "text": "¿Qué diferencia hay entre un límite \"duro\" y uno \"blando\"?",
+      "explanation": "El límite duro es <b>innegociable</b> pase lo que pase. El blando puede explorarse con más cautela, pero solo si la persona lo decide, nunca por presión.",
+      "options": [
+        { "text": "El duro nunca se cruza; el blando puede negociarse o explorarse con cuidado", "is_correct": true, "position": 0 },
+        { "text": "El blando es solo para principiantes", "is_correct": false, "position": 1 },
+        { "text": "No hay diferencia real", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "negociacion",
+      "position": 2,
+      "text": "¿Por qué es importante hablar del historial médico o físico antes de una escena?",
+      "explanation": "Cualquier actividad puede verse afectada por una condición física no evidente. <b>Compartir esta información es parte de cuidar al otro</b>, no un trámite opcional.",
+      "options": [
+        { "text": "No es necesario si ambos ya se conocen bien", "is_correct": false, "position": 0 },
+        { "text": "Para evitar riesgos según la actividad (lesiones, alergias, condiciones)", "is_correct": true, "position": 1 },
+        { "text": "Solo aplica en actividades de alto impacto físico", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "negociacion",
+      "position": 3,
+      "text": "La palabra de seguridad debería ser:",
+      "explanation": "Palabras como \"no\" pueden formar parte del juego y perder su función de parada real. Por eso se elige <b>una palabra clara y distinta</b> que ambos reconozcan sin dudas.",
+      "options": [
+        { "text": "Cualquier palabra que ambos recuerden y no se use normalmente durante la escena", "is_correct": true, "position": 0 },
+        { "text": "Siempre \"no\" o \"para\"", "is_correct": false, "position": 1 },
+        { "text": "Innecesaria si hay confianza entre ambos", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "negociacion",
+      "position": 4,
+      "text": "¿Qué sistema se puede usar si la palabra de seguridad no es posible (por ejemplo, con la boca cubierta)?",
+      "explanation": "Cuando la voz no está disponible, <b>se acuerda una señal física</b> con el mismo peso que la palabra de seguridad verbal.",
+      "options": [
+        { "text": "No hay alternativa, hay que evitar esas situaciones siempre", "is_correct": false, "position": 0 },
+        { "text": "Señales no verbales acordadas de antemano (soltar un objeto, un gesto)", "is_correct": true, "position": 1 },
+        { "text": "Confiar en que el otro lo note por instinto", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "negociacion",
+      "position": 5,
+      "text": "Antes de una escena nueva, hablar de expectativas sirve para:",
+      "explanation": "Da igual el nivel de experiencia — <b>las expectativas pueden no coincidir</b> si no se hablan, y eso genera confusión o malestar innecesario.",
+      "options": [
+        { "text": "Asegurarse de que ambos buscan algo similar y evitar malentendidos", "is_correct": true, "position": 0 },
+        { "text": "Solo para relaciones a largo plazo", "is_correct": false, "position": 1 },
+        { "text": "Es un paso que se puede saltar entre gente experimentada", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "negociacion",
+      "position": 6,
+      "text": "Si durante la negociación alguien no está seguro de un límite, ¿qué es lo correcto?",
+      "explanation": "La incertidumbre <b>no se resuelve diciendo que sí</b>. Es perfectamente válido dejar algo fuera hasta tenerlo más claro.",
+      "options": [
+        { "text": "Decir que sí para no parecer inexperto", "is_correct": false, "position": 0 },
+        { "text": "Decir que no lo tiene claro y dejarlo fuera por ahora", "is_correct": true, "position": 1 },
+        { "text": "El otro decide por él/ella", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "negociacion",
+      "position": 7,
+      "text": "¿La negociación se hace solo una vez, al principio de la relación?",
+      "explanation": "Los límites y gustos <b>pueden cambiar</b>. Una negociación inicial no cubre para siempre — se revisa periódicamente o antes de algo nuevo.",
+      "options": [
+        { "text": "Sí, después ya no hace falta repetirla", "is_correct": false, "position": 0 },
+        { "text": "No, se revisa y actualiza con el tiempo", "is_correct": true, "position": 1 },
+        { "text": "Solo si cambian de pareja", "is_correct": false, "position": 2 }
       ]
     }
   ]
