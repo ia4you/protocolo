@@ -7,15 +7,27 @@ import ExplanationSheet from "./ExplanationSheet";
 const STORAGE_KEY = "protocolo:quiz";
 const ADVANCE_DELAY_MS = 700;
 
-// Categorías anidadas → lista plana de preguntas, en el orden de la BD
+// Categorías anidadas → lista plana de preguntas
 function flatten(categories) {
   return categories.flatMap((c) =>
     c.questions.map((q) => ({ ...q, category: c.name, icon: c.icon }))
   );
 }
 
+// Fisher–Yates
+function shuffle(items) {
+  const a = [...items];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+// El orden se baraja una vez por sesión (pestaña): solo cuando no hay ninguno
+// guardado. Recargar o "Empezar de nuevo" reutilizan el mismo orden.
 function freshState(questions) {
-  return { order: questions.map((q) => q.id), index: 0, answers: {} };
+  return { order: shuffle(questions.map((q) => q.id)), index: 0, answers: {} };
 }
 
 // Progreso guardado en esta pestaña, solo si sigue encajando con las preguntas
@@ -125,12 +137,15 @@ export default function Quiz() {
 
   function restart() {
     setAnswerError(false);
-    setState(freshState(questions));
+    setState((s) => ({ order: s.order, index: 0, answers: {} }));
   }
 
+  // Cada pregunta solo admite una respuesta, así que esto cuenta aciertos al
+  // primer intento. Sale de answers, que ya se guarda en sessionStorage.
   const score = state
     ? Object.values(state.answers).filter((a) => a.correct).length
     : 0;
+  const scorePct = total ? Math.round((score / total) * 100) : 0;
   const progressPct = finished ? 100 : total ? (index / total) * 100 : 0;
 
   let body;
@@ -148,7 +163,10 @@ export default function Quiz() {
       <div className="pt-4 text-center">
         <ProtocolIcon name="shield" className="mx-auto mb-6 h-[88px] w-[88px] text-ink" />
         <h2 className="mb-2 font-serif text-[1.6rem] font-medium">Bloque completado</h2>
-        <p className="mb-[1.6rem] text-ink-dim">
+        <p className="mb-2 font-serif text-[1.25rem] leading-snug text-accent-soft">
+          Has acertado el {scorePct}% del protocolo
+        </p>
+        <p className="mb-[1.6rem] text-[0.9rem] text-ink-dim">
           {score} de {total} respuestas correctas al primer intento.
         </p>
         <RestartButton onClick={restart}>Empezar de nuevo</RestartButton>
@@ -198,7 +216,13 @@ export default function Quiz() {
           <span className="font-serif text-[1.05rem] tracking-[0.02em] text-ink-dim">Protocolo</span>
           {state && (
             <span className="text-[0.8rem] tabular-nums text-ink-dim">
-              {finished ? total : index + 1} / {total}
+              <span className="text-ok-soft" aria-live="polite">
+                {score} {score === 1 ? "acierto" : "aciertos"}
+              </span>
+              <span className="mx-2 text-line" aria-hidden="true">·</span>
+              <span>
+                {finished ? total : index + 1} / {total}
+              </span>
             </span>
           )}
         </div>

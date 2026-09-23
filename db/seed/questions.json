@@ -37,6 +37,61 @@
       ]
     },
     {
+      "category_slug": "comunidad",
+      "position": 1,
+      "text": "En un dungeon o club, si ves equipo (cuerdas, cruces, etc.) que no estás usando:",
+      "explanation": "El equipo, aunque esté en un espacio compartido, <b>no es de uso libre</b>. Se pide permiso, igual que con cualquier pertenencia ajena.",
+      "options": [
+        { "text": "Puedes tocarlo o probarlo si no hay nadie cerca", "is_correct": false, "position": 0 },
+        { "text": "Se pide permiso antes de tocar cualquier equipo", "is_correct": true, "position": 1 },
+        { "text": "Es de uso libre para todos los asistentes", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "comunidad",
+      "position": 2,
+      "text": "Si estás en un club y ves una escena de otras personas en curso, ¿qué es lo correcto?",
+      "explanation": "Una escena ajena <b>no se interrumpe ni se comenta</b>, aunque el espacio sea público. La privacidad de esa escena se respeta igual que en cualquier otro contexto.",
+      "options": [
+        { "text": "Puedes acercarte a mirar de cerca, es parte del ambiente", "is_correct": false, "position": 0 },
+        { "text": "Observar sin interrumpir, y solo desde una distancia respetuosa", "is_correct": true, "position": 1 },
+        { "text": "Dar tu opinión si crees que algo está mal", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "comunidad",
+      "position": 3,
+      "text": "Sobre hacer fotos en un espacio kink (club, munch, fiesta privada):",
+      "explanation": "La regla de privacidad en estos espacios es <b>estricta por defecto</b>: sin consentimiento explícito, no hay fotos, ni de personas ni de nombres reales.",
+      "options": [
+        { "text": "Se puede fotografiar libremente si es para uso personal", "is_correct": false, "position": 0 },
+        { "text": "Nunca se hace sin permiso explícito de las personas implicadas", "is_correct": true, "position": 1 },
+        { "text": "Solo se necesita permiso si sale la cara", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "comunidad",
+      "position": 4,
+      "text": "Un \"safe call\" al quedar con alguien nuevo de una app o comunidad online consiste en:",
+      "explanation": "Es una <b>medida de seguridad básica</b>, no una señal de desconfianza hacia la otra persona — se recomienda para cualquier primer encuentro con alguien que no conoces en persona.",
+      "options": [
+        { "text": "Avisar a alguien de confianza con los detalles del encuentro y cuándo esperar noticias tuyas", "is_correct": true, "position": 0 },
+        { "text": "Pedirle a la otra persona que se identifique con su DNI", "is_correct": false, "position": 1 },
+        { "text": "Solo es necesario si ya hay desconfianza previa", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "comunidad",
+      "position": 5,
+      "text": "¿Las normas de un club o munch concreto (etiqueta, vestimenta, protocolos de saludo) aplican igual en cualquier otro espacio kink?",
+      "explanation": "Como con casi todo lo visto en este quiz, <b>no hay un reglamento universal</b> — cada comunidad y cada espacio define sus propias normas.",
+      "options": [
+        { "text": "Sí, son un estándar único en toda la comunidad", "is_correct": false, "position": 0 },
+        { "text": "No, cada espacio tiene las suyas propias", "is_correct": true, "position": 1 },
+        { "text": "Solo varían entre países, no entre clubs", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
       "category_slug": "discrecion",
       "position": 0,
       "text": "Si un Amo/Ama y su sumiso están en una comida familiar, ¿qué es lo más común?",

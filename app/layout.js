@@ -15,9 +15,29 @@ const fraunces = Fraunces({
   display: "swap",
 });
 
+const SITE_URL = "https://protocolo.turel.es";
+const title = "Protocolo — Quiz";
+const description = "Quiz sobre protocolos y consentimiento BDSM";
+
 export const metadata = {
-  title: "Protocolo — Quiz",
-  description: "Quiz sobre protocolos en dinámicas D/s",
+  title,
+  description,
+  alternates: { canonical: SITE_URL },
+  openGraph: {
+    title,
+    description,
+    url: SITE_URL,
+    siteName: "Protocolo",
+    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630 }],
+    locale: "es_ES",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: [`${SITE_URL}/og-image.png`],
+  },
 };
 
 export const viewport = {
