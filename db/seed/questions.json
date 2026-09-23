@@ -9,7 +9,9 @@
     { "slug": "apariencia", "name": "Dinámica de poder · Apariencia y símbolos", "icon": "shield", "position": 6 },
     { "slug": "disciplina", "name": "Dinámica de poder · Disciplina y corrección", "icon": "diamond", "position": 7 },
     { "slug": "permisos", "name": "Dinámica de poder · Permiso y acceso", "icon": "route", "position": 8 },
-    { "slug": "negociacion", "name": "Consentimiento · Negociación previa", "icon": "route", "position": 9 }
+    { "slug": "negociacion", "name": "Consentimiento · Negociación previa", "icon": "route", "position": 9 },
+    { "slug": "escena", "name": "Durante la escena", "icon": "shield", "position": 10 },
+    { "slug": "cierre", "name": "Cierre · Aftercare", "icon": "rings", "position": 11 }
   ],
   "questions": [
     {
@@ -406,6 +408,138 @@
         { "text": "Sí, después ya no hace falta repetirla", "is_correct": false, "position": 0 },
         { "text": "No, se revisa y actualiza con el tiempo", "is_correct": true, "position": 1 },
         { "text": "Solo si cambian de pareja", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "escena",
+      "position": 0,
+      "text": "Los \"check-ins\" durante una escena (preguntar cómo va, cómo se siente) sirven para:",
+      "explanation": "Preguntar durante la escena <b>no rompe nada</b> — es parte de cuidar activamente al otro mientras ocurre, no solo antes o después.",
+      "options": [
+        { "text": "Confirmar que todo sigue bien y ajustar si hace falta", "is_correct": true, "position": 0 },
+        { "text": "Solo se usan si algo va mal", "is_correct": false, "position": 1 },
+        { "text": "Rompen el ambiente, mejor evitarlos", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "escena",
+      "position": 1,
+      "text": "Si alguien dice la palabra de seguridad, ¿qué debe pasar?",
+      "explanation": "La palabra de seguridad <b>no es negociable en el momento</b>. Se para, y ya después —con calma— se habla de qué pasó.",
+      "options": [
+        { "text": "Se baja la intensidad, pero se continúa", "is_correct": false, "position": 0 },
+        { "text": "Se detiene todo de inmediato, sin negociar en ese momento", "is_correct": true, "position": 1 },
+        { "text": "Depende de en qué punto de la escena estén", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "escena",
+      "position": 2,
+      "text": "Durante bondage, es importante vigilar:",
+      "explanation": "Ninguna atadura es \"segura por defecto\". <b>Los signos físicos</b> (color, temperatura, hormigueo) indican si hay que aflojar o liberar algo.",
+      "options": [
+        { "text": "Solo la expresión facial de la persona", "is_correct": false, "position": 0 },
+        { "text": "Color de piel, temperatura y sensibilidad en manos/pies", "is_correct": true, "position": 1 },
+        { "text": "No hace falta vigilar nada si las ataduras están bien hechas", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "escena",
+      "position": 3,
+      "text": "Si alguien parece ido o desconectado durante una escena pero no ha dicho nada, ¿qué es recomendable?",
+      "explanation": "No todo el mundo verbaliza malestar en el momento. <b>Observar y preguntar</b> es responsabilidad de quien dirige la escena, no solo esperar a que el otro hable.",
+      "options": [
+        { "text": "Continuar, ya avisará si algo va mal", "is_correct": false, "position": 0 },
+        { "text": "Comprobar activamente cómo está, aunque no lo haya pedido", "is_correct": true, "position": 1 },
+        { "text": "Asumir que está disfrutando en silencio", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "escena",
+      "position": 4,
+      "text": "Un \"subspace\" (estado alterado de conciencia durante la escena) requiere:",
+      "explanation": "El subspace puede afectar el juicio y la capacidad de comunicarse con claridad. <b>Quien dirige debe estar más atento</b>, no menos, en ese estado.",
+      "options": [
+        { "text": "Nada especial, es solo un estado agradable", "is_correct": false, "position": 0 },
+        { "text": "Atención extra, porque la persona puede no reaccionar con claridad", "is_correct": true, "position": 1 },
+        { "text": "Terminar la escena inmediatamente siempre", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "escena",
+      "position": 5,
+      "text": "Si algo no estaba planeado surge durante la escena (una idea nueva, algo no negociado), ¿qué se hace?",
+      "explanation": "Lo no negociado <b>no se improvisa sobre la marcha</b>. Cualquier cosa nueva necesita su propio consentimiento explícito, aunque ya estén en medio de algo.",
+      "options": [
+        { "text": "Se prueba igualmente, ya se hablará después", "is_correct": false, "position": 0 },
+        { "text": "Se detiene y se pregunta antes de continuar por ahí", "is_correct": true, "position": 1 },
+        { "text": "Se asume que como ya empezaron, todo vale", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "cierre",
+      "position": 0,
+      "text": "El aftercare (cuidado posterior) sirve para:",
+      "explanation": "El aftercare <b>no es un extra opcional</b> — ayuda a procesar lo vivido, física y emocionalmente, para ambas personas, no solo para quien fue sumiso.",
+      "options": [
+        { "text": "Solo aplica si la escena fue muy intensa físicamente", "is_correct": false, "position": 0 },
+        { "text": "Ayudar a ambos a volver a un estado de calma y conexión", "is_correct": true, "position": 1 },
+        { "text": "Es opcional y poco común en la práctica real", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "cierre",
+      "position": 1,
+      "text": "Las necesidades de aftercare:",
+      "explanation": "Algunas personas necesitan abrazos y silencio, otras espacio y agua, otras hablar. <b>No hay una receta única</b> — se pregunta o se conoce con el tiempo.",
+      "options": [
+        { "text": "Son iguales para todo el mundo", "is_correct": false, "position": 0 },
+        { "text": "Varían mucho de una persona a otra", "is_correct": true, "position": 1 },
+        { "text": "Solo las necesita quien recibió la escena", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "cierre",
+      "position": 2,
+      "text": "¿Quién puede necesitar aftercare después de una escena?",
+      "explanation": "El \"top drop\" (bajón emocional de quien dirige la escena) es real. <b>El cuidado posterior no es solo para el sumiso.</b>",
+      "options": [
+        { "text": "Solo el sumiso", "is_correct": false, "position": 0 },
+        { "text": "Solo el Dominante", "is_correct": false, "position": 1 },
+        { "text": "Cualquiera de los dos, incluso ambos", "is_correct": true, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "cierre",
+      "position": 3,
+      "text": "Un \"check-in posterior\" (horas o días después) sirve para:",
+      "explanation": "Algunas reacciones o pensamientos <b>aparecen después</b>, no en el momento. Revisar con perspectiva ayuda a detectar algo que no se vio al principio.",
+      "options": [
+        { "text": "Repetir lo mismo que ya se habló en el aftercare inmediato", "is_correct": false, "position": 0 },
+        { "text": "Ver cómo se sienten con perspectiva, ya sin la intensidad del momento", "is_correct": true, "position": 1 },
+        { "text": "Solo hace falta si algo salió mal", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "cierre",
+      "position": 4,
+      "text": "Un \"debrief\" (hablar de qué funcionó y qué no) después de una escena:",
+      "explanation": "Hablar después, <b>incluso cuando todo fue bien</b>, ayuda a entender qué funcionó y a seguir ajustando el protocolo a lo que de verdad quieren ambos.",
+      "options": [
+        { "text": "Es innecesario si todo salió bien", "is_correct": false, "position": 0 },
+        { "text": "Ayuda a ajustar futuras escenas, salga bien o mal", "is_correct": true, "position": 1 },
+        { "text": "Solo se hace cuando hay un problema grave", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "cierre",
+      "position": 5,
+      "text": "Si después de una escena alguien se siente mal pero no sabe exactamente por qué, ¿qué es razonable?",
+      "explanation": "No hace falta tener una explicación exacta para que algo merezca hablarse. <b>El malestar es válido igual</b>, se entienda del todo o no.",
+      "options": [
+        { "text": "Ignorarlo, ya se le pasará", "is_correct": false, "position": 0 },
+        { "text": "Hablarlo de todos modos, aunque no tenga una razón clara", "is_correct": true, "position": 1 },
+        { "text": "Asumir que la escena estuvo mal planteada", "is_correct": false, "position": 2 }
       ]
     }
   ]

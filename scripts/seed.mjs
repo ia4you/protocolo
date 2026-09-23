@@ -11,6 +11,8 @@ function validate({ categories, questions }) {
   const errors = [];
   const slugs = new Set(categories.map((c) => c.slug));
   if (slugs.size !== categories.length) errors.push("Hay slugs de categoría repetidos");
+  const categoryPositions = new Set(categories.map((c) => c.position));
+  if (categoryPositions.size !== categories.length) errors.push("Hay posiciones de categoría repetidas");
 
   const questionKeys = new Set();
   for (const q of questions) {
