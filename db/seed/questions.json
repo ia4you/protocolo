@@ -1,0 +1,175 @@
+{
+  "categories": [
+    { "slug": "trato", "name": "Dinámica de poder · Trato", "icon": "diamond", "position": 0 },
+    { "slug": "comunidad", "name": "Espacio · Comunidad", "icon": "rings", "position": 1 },
+    { "slug": "discrecion", "name": "Dinámica de poder · Discreción", "icon": "threshold", "position": 2 },
+    { "slug": "comunicacion", "name": "Dinámica de poder · Comunicación", "icon": "route", "position": 3 }
+  ],
+  "questions": [
+    {
+      "category_slug": "trato",
+      "position": 0,
+      "text": "¿Quién decide el título que usará el sumiso con su propio Amo/Ama (ej. “Amo”, “Señor”, un nombre)?",
+      "explanation": "El título dentro de <b>una relación concreta</b> no lo impone ninguna regla general del BDSM. Puede coincidir con “Señor”, pero es cosa de esa pareja decidirlo, no un estándar fijo.",
+      "options": [
+        { "text": "Siempre es “Señor” por defecto", "is_correct": false, "position": 0 },
+        { "text": "Lo decide únicamente el Amo/Ama", "is_correct": false, "position": 1 },
+        { "text": "Se negocia y acuerda entre ambos", "is_correct": true, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "comunidad",
+      "position": 0,
+      "text": "En un club o munch, ¿cómo se suele tratar a un Dominante que no conoces?",
+      "explanation": "Es <b>cortesía social del espacio</b>, no una ley del BDSM. Cada comunidad tiene sus propias costumbres, y no todas la aplican.",
+      "options": [
+        { "text": "Da igual, no hay reglas", "is_correct": false, "position": 0 },
+        { "text": "Con respeto, tipo “Señor” o “Señora”", "is_correct": true, "position": 1 },
+        { "text": "Siempre igual que a tu propio Amo/Ama", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "discrecion",
+      "position": 0,
+      "text": "Si un Amo/Ama y su sumiso están en una comida familiar, ¿qué es lo más común?",
+      "explanation": "Fuera de espacios kink casi siempre se guarda discreción. La dinámica <b>no desaparece</b>, solo no se muestra ante quien no la conoce o no la consintió.",
+      "options": [
+        { "text": "Usar el trato acordado igual que siempre, delante de todos", "is_correct": false, "position": 0 },
+        { "text": "Pausar el trato especial por respeto y privacidad", "is_correct": true, "position": 1 },
+        { "text": "Terminar la relación D/s ese día", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "discrecion",
+      "position": 1,
+      "text": "Si están con amigos que no saben nada de su dinámica D/s, ¿qué suelen hacer?",
+      "explanation": "Se prioriza la discreción: no hace falta ocultar que son pareja, solo <b>no exponer el protocolo específico</b> ante quien no lo conoce.",
+      "options": [
+        { "text": "Explicarles todo el protocolo en ese momento", "is_correct": false, "position": 0 },
+        { "text": "Comportarse como una pareja normal, sin mostrar el protocolo", "is_correct": true, "position": 1 },
+        { "text": "Ignorarse mutuamente para no dar pistas", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "discrecion",
+      "position": 2,
+      "text": "En el trabajo, si el Amo/Ama necesita comunicarse con su sumiso, ¿qué es lo más adecuado?",
+      "explanation": "El trabajo prioriza privacidad y profesionalidad. El protocolo especial <b>queda para espacios privados</b> o acordados de antemano.",
+      "options": [
+        { "text": "Usar el título acordado (ej. “Amo”) igual que en casa", "is_correct": false, "position": 0 },
+        { "text": "Tratarse con normalidad, como cualquier compañero o pareja", "is_correct": true, "position": 1 },
+        { "text": "No hablarse en absoluto durante el horario laboral", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "discrecion",
+      "position": 3,
+      "text": "Algunas parejas usan señales discretas (una palabra, un gesto) para mantener conexión en público. Esto es:",
+      "explanation": "No todas las parejas lo usan. Es un recurso <b>opcional</b> para sentir la dinámica activa sin exponerla, si así lo acuerdan.",
+      "options": [
+        { "text": "Obligatorio en toda dinámica D/s", "is_correct": false, "position": 0 },
+        { "text": "Una opción que algunas parejas acuerdan, no una regla", "is_correct": true, "position": 1 },
+        { "text": "Algo prohibido porque rompe el protocolo", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "discrecion",
+      "position": 4,
+      "text": "Si el sumiso olvida sin querer usar el título acordado delante de gente de confianza, ¿qué es lo más sano?",
+      "explanation": "Los errores se corrigen <b>en privado y con calma</b>. El protocolo no es una excusa para exponer o humillar a nadie delante de otros.",
+      "options": [
+        { "text": "Corregirlo con humillación pública para “enseñar”", "is_correct": false, "position": 0 },
+        { "text": "Dejarlo pasar y hablarlo en privado después", "is_correct": true, "position": 1 },
+        { "text": "Terminar la dinámica en ese momento", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "discrecion",
+      "position": 5,
+      "text": "Si viajan y comparten habitación con amigos no-kink, ¿qué suele pasar con las rutinas nocturnas acordadas?",
+      "explanation": "La privacidad y comodidad de terceros importa. Las rutinas <b>se ajustan a la realidad del momento</b>, no al revés.",
+      "options": [
+        { "text": "Se cancelan o adaptan según el espacio disponible", "is_correct": true, "position": 0 },
+        { "text": "Se mantienen exactamente igual sin importar quién esté", "is_correct": false, "position": 1 },
+        { "text": "Se hacen igual pero en silencio absoluto", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "discrecion",
+      "position": 6,
+      "text": "Si el sumiso prefiere mantener el protocolo siempre, incluso en familia, ¿qué puede hacer?",
+      "explanation": "El protocolo lo deciden ambos. Si algo no encaja, <b>se renegocia</b> — no hay una única forma correcta de manejarlo.",
+      "options": [
+        { "text": "Nada, la discreción es obligatoria siempre", "is_correct": false, "position": 0 },
+        { "text": "Hablarlo con su Amo/Ama y ajustar el acuerdo", "is_correct": true, "position": 1 },
+        { "text": "Aguantarse en silencio", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "discrecion",
+      "position": 7,
+      "text": "En una reunión familiar, si alguien pregunta directamente sobre la relación, ¿qué es razonable?",
+      "explanation": "Cada pareja decide <b>cuánto compartir</b> de su vida privada. No hay obligación de revelar la dinámica ni de ocultar que son pareja.",
+      "options": [
+        { "text": "Contar todos los detalles del protocolo D/s", "is_correct": false, "position": 0 },
+        { "text": "Responder con lo que la pareja haya acordado compartir", "is_correct": true, "position": 1 },
+        { "text": "Mentir diciendo que no son pareja", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "discrecion",
+      "position": 8,
+      "text": "Si el Amo/Ama aplica el protocolo completo en una cena familiar sin hablarlo antes, ¿qué indica esto?",
+      "explanation": "Cambiar el protocolo en un contexto sensible sin acuerdo previo <b>rompe la confianza</b>. Todo cambio de contexto debería hablarse antes.",
+      "options": [
+        { "text": "Que domina bien su rol", "is_correct": false, "position": 0 },
+        { "text": "Que no respetó lo acordado sobre discreción", "is_correct": true, "position": 1 },
+        { "text": "Que la familia debe adaptarse", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "comunicacion",
+      "position": 0,
+      "text": "Si el sumiso no está de acuerdo con algo, ¿qué debería poder hacer?",
+      "explanation": "Incluso en dinámicas estrictas debe existir un canal para expresar desacuerdo. <b>El protocolo no elimina la voz del sumiso.</b>",
+      "options": [
+        { "text": "Callarse siempre, el protocolo no permite objeciones", "is_correct": false, "position": 0 },
+        { "text": "Expresarlo, aunque sea en un momento y forma acordados", "is_correct": true, "position": 1 },
+        { "text": "Solo puede decirlo si el Amo/Ama pregunta primero", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "comunicacion",
+      "position": 1,
+      "text": "Los “check-ins” o reportes regulares (cómo se siente, si cumplió tareas) sirven para:",
+      "explanation": "Son una herramienta de <b>cuidado y ajuste mutuo</b>, no solo de control. Su frecuencia e intensidad depende de lo acordado.",
+      "options": [
+        { "text": "Controlar al sumiso sin motivo", "is_correct": false, "position": 0 },
+        { "text": "Mantener comunicación y ajustar la dinámica", "is_correct": true, "position": 1 },
+        { "text": "Solo aplican en dinámicas 24/7, nunca en otras", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "comunicacion",
+      "position": 2,
+      "text": "¿Es necesario pedir permiso para hablar en toda dinámica D/s?",
+      "explanation": "No es un requisito universal. Algunas parejas lo incluyen como parte del protocolo, <b>otras no lo usan en absoluto</b>.",
+      "options": [
+        { "text": "Sí, siempre, es parte esencial del BDSM", "is_correct": false, "position": 0 },
+        { "text": "No, depende de lo que hayan acordado esa pareja", "is_correct": true, "position": 1 },
+        { "text": "Solo los sumisos avanzados lo hacen", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "comunicacion",
+      "position": 3,
+      "text": "Si el Amo/Ama nota que su sumiso está incómodo pero no lo dice, ¿qué es lo recomendable?",
+      "explanation": "La comunicación es responsabilidad de <b>ambas partes</b>, no solo del sumiso. Un buen Amo/Ama también observa y pregunta.",
+      "options": [
+        { "text": "Ignorarlo, el sumiso debe hablar por sí mismo siempre", "is_correct": false, "position": 0 },
+        { "text": "Preguntar directamente y abrir espacio para hablarlo", "is_correct": true, "position": 1 },
+        { "text": "Asumir que está bien porque no usó la palabra de seguridad", "is_correct": false, "position": 2 }
+      ]
+    }
+  ]
+}
