@@ -14,7 +14,17 @@
     { "slug": "cierre", "name": "Cierre · Aftercare", "icon": "rings", "position": 11 },
     { "slug": "bondage", "name": "Protocolo en Bondage", "icon": "thread", "position": 13 },
     { "slug": "cuerdas", "name": "Protocolo en Cuerdas / Shibari", "icon": "diamond", "position": 14 },
-    { "slug": "spanking", "name": "Protocolo en Spanking / Impact", "icon": "threshold", "position": 15 }
+    { "slug": "spanking", "name": "Protocolo en Spanking / Impact", "icon": "threshold", "position": 15 },
+    { "slug": "terminologia", "name": "Terminología de protocolo", "icon": "rings", "position": 16 },
+    { "slug": "limites-avanzado", "name": "Límites y consentimiento avanzado", "icon": "diamond", "position": 17 },
+    { "slug": "petplay", "name": "Petplay y Primal", "icon": "thread", "position": 18 },
+    { "slug": "ageplay", "name": "Ageplay y roles de cuidado", "icon": "diamond", "position": 19 },
+    { "slug": "chastity", "name": "Chastity y control", "icon": "shield", "position": 20 },
+    { "slug": "rituales", "name": "Rituales e inspección", "icon": "rings", "position": 21 },
+    { "slug": "brat", "name": "Brat / Brat taming", "icon": "route", "position": 22 },
+    { "slug": "comunidad-social", "name": "Comunidad · Espacios sociales", "icon": "threshold", "position": 23 },
+    { "slug": "negociacion-avanzada", "name": "Negociación avanzada", "icon": "ladder", "position": 24 },
+    { "slug": "disciplina-avanzada", "name": "Disciplina avanzada", "icon": "diamond", "position": 25 }
   ],
   "questions": [
     {
@@ -729,6 +739,428 @@
         { "text": "La negociación previa cubre expectativas generales, pero no sustituye el consentimiento continuo momento a momento", "is_correct": true, "position": 1 },
         { "text": "Solo falla si la escena dura más de 20 minutos", "is_correct": false, "position": 2 },
         { "text": "Falla porque toda escena debe negociarse dos veces, antes y a mitad", "is_correct": false, "position": 3 }
+      ]
+    },
+    {
+      "category_slug": "terminologia",
+      "level": "medio",
+      "position": 0,
+      "text": "¿Qué es el \"TPE\" (Total Power Exchange) dentro de una dinámica M/s?",
+      "explanation": "<b>TPE</b> no significa ausencia de límites — sigue habiendo negociación y límites duros. Lo que cambia es el <b>alcance</b>: se extiende a más áreas de la vida que en un D/s más simbólico o puntual.",
+      "options": [
+        { "text": "Un tipo de atadura específica de shibari", "is_correct": false, "position": 0 },
+        { "text": "Un acuerdo donde el control se extiende, en teoría, a prácticamente todas las áreas de la vida del sumiso/esclavo, siempre dentro de límites negociados", "is_correct": true, "position": 1 },
+        { "text": "El nombre técnico de la palabra de seguridad en dinámicas 24/7", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "terminologia",
+      "level": "medio",
+      "position": 1,
+      "text": "En protocolos de \"collaring\" por etapas, un \"collar de consideración\" suele indicar:",
+      "explanation": "El collar de consideración es, en las tradiciones que usan este sistema por etapas, <b>una fase intermedia</b> — señala intención de explorar, no un compromiso definitivo como el collar permanente.",
+      "options": [
+        { "text": "Un compromiso final y permanente, equivalente a un matrimonio", "is_correct": false, "position": 0 },
+        { "text": "Un periodo de prueba: la pareja está explorando si quiere avanzar hacia un compromiso M/s mayor", "is_correct": true, "position": 1 },
+        { "text": "Un collar puramente decorativo sin ningún significado de protocolo", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "terminologia",
+      "level": "medio",
+      "position": 2,
+      "text": "El término \"service submission\" (sumisión de servicio) se centra principalmente en:",
+      "explanation": "La sumisión de servicio pone el <b>foco en el servicio y el cuidado</b> como forma de expresar la dinámica, a diferencia de otras variantes centradas más en el control, la disciplina o el intercambio de poder por sí mismo.",
+      "options": [
+        { "text": "Actos sexuales como forma exclusiva de sumisión", "is_correct": false, "position": 0 },
+        { "text": "El acto de servir (tareas, cuidado, atención) como la expresión central de la dinámica, más que el control o la disciplina", "is_correct": true, "position": 1 },
+        { "text": "Es un sinónimo exacto de \"bottom\", sin relación con D/s", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "terminologia",
+      "level": "medio",
+      "position": 3,
+      "text": "¿Qué distingue a la llamada \"old guard\" (vieja guardia) dentro de las tradiciones M/s?",
+      "explanation": "\"Old guard\" se refiere a un <b>estilo concreto de protocolo</b>, más ritualizado y formal, con raíces en las comunidades leather de mediados del siglo XX — no es una simple cuestión de antigüedad de la pareja.",
+      "options": [
+        { "text": "Es simplemente el nombre que reciben las parejas con más de 10 años juntas", "is_correct": false, "position": 0 },
+        { "text": "Hace referencia a un conjunto de tradiciones más formales y jerárquicas, con raíces históricas en comunidades leather/kink más antiguas", "is_correct": true, "position": 1 },
+        { "text": "Es un término despectivo sin ningún uso real en la comunidad", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "terminologia",
+      "level": "medio",
+      "position": 4,
+      "text": "Un \"funishment\" (mezcla de \"fun\" + \"punishment\") en el contexto de protocolos de disciplina es:",
+      "explanation": "El \"funishment\" es <b>explícitamente lúdico y acordado</b> — no sustituye a una corrección real ni se usa para disfrazar un castigo con carga emocional genuina. Confundir ambos es justo el error que un buen protocolo evita.",
+      "options": [
+        { "text": "Un castigo real disfrazado de juego para evitar el conflicto", "is_correct": false, "position": 0 },
+        { "text": "Una consecuencia acordada de antemano que ambos disfrutan, sin la carga real de una corrección seria", "is_correct": true, "position": 1 },
+        { "text": "Un término que solo se usa en dinámicas M/s, nunca en D/s", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "terminologia",
+      "level": "medio",
+      "position": 5,
+      "text": "El concepto de \"consentimiento informado\" en la negociación previa implica específicamente:",
+      "explanation": "El consentimiento informado exige <b>comprensión real</b> de lo que implica la actividad — un \"sí\" sin conocer riesgos o detalles concretos no cumple este estándar, aunque técnicamente haya habido acuerdo verbal.",
+      "options": [
+        { "text": "Que basta con decir \"sí\" para que algo sea válido", "is_correct": false, "position": 0 },
+        { "text": "Que la persona entiende de verdad los riesgos y detalles de lo que va a hacer, no solo que acepta de forma genérica", "is_correct": true, "position": 1 },
+        { "text": "Que debe existir un documento firmado para cada actividad", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "limites-avanzado",
+      "level": "master",
+      "position": 0,
+      "text": "Una persona negocia sus límites duros con su pareja habitual. En una fiesta kink, un tercero (Dominante distinto, sin relación previa) le pide participar en una escena grupal breve. ¿Qué dice el protocolo sobre los límites ya negociados con su pareja?",
+      "explanation": "Los límites <b>pertenecen a la persona, no a la relación</b>. Ni el contexto de fiesta ni el permiso de la pareja sustituyen una negociación directa y explícita con cada nueva persona implicada — nadie \"hereda\" un consentimiento ya dado a otra persona.",
+      "options": [
+        { "text": "Los límites acordados con la pareja habitual se transfieren automáticamente a cualquier tercero en el mismo espacio", "is_correct": false, "position": 0 },
+        { "text": "Los límites son personales de quien los estableció; deben renegociarse (aunque sea brevemente) con cualquier nueva persona, sin asumir que ya se conocen", "is_correct": true, "position": 1 },
+        { "text": "En espacios de fiesta, los límites individuales quedan en pausa por defecto", "is_correct": false, "position": 2 },
+        { "text": "Solo se transfieren si la pareja habitual da permiso verbal en el momento", "is_correct": false, "position": 3 }
+      ]
+    },
+    {
+      "category_slug": "limites-avanzado",
+      "level": "master",
+      "position": 1,
+      "text": "En una escena de edge play (alto riesgo, ej. breath play), el Dominante tiene formación y experiencia certificada. Durante la escena, el sumiso empieza a mostrar signos físicos de alarma reales, pero no ha dicho la palabra de seguridad. ¿Qué prevalece?",
+      "explanation": "Ninguna certificación o experiencia <b>sustituye la vigilancia activa de señales físicas reales</b>. La palabra de seguridad es una herramienta, no la única — cuando el cuerpo da señales claras de alarma, esas señales pesan más que su ausencia verbal, sobre todo en prácticas de alto riesgo.",
+      "options": [
+        { "text": "La certificación del Dominante es garantía suficiente para continuar hasta que se diga la palabra de seguridad", "is_correct": false, "position": 0 },
+        { "text": "Las señales físicas objetivas de alarma tienen prioridad sobre la ausencia de palabra de seguridad, incluso con un Dominante experimentado", "is_correct": true, "position": 1 },
+        { "text": "Solo se detiene si hay pérdida de conciencia confirmada", "is_correct": false, "position": 2 },
+        { "text": "La formación exime de la necesidad de vigilar señales físicas continuamente", "is_correct": false, "position": 3 }
+      ]
+    },
+    {
+      "category_slug": "petplay",
+      "level": "medio",
+      "position": 0,
+      "text": "\"Headspace\" en petplay se refiere a:",
+      "explanation": "Es un <b>estado psicológico</b>, similar al subspace pero propio de esta práctica.",
+      "options": [
+        { "text": "La postura de la cabeza durante el juego", "is_correct": false, "position": 0 },
+        { "text": "El estado mental de \"meterse\" en el rol de mascota", "is_correct": true, "position": 1 },
+        { "text": "Un tipo de correa específico", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "petplay",
+      "level": "medio",
+      "position": 1,
+      "text": "Diferencia entre petplay y primal play:",
+      "explanation": "El petplay tiene <b>un personaje definido</b>; el primal se apoya en <b>reacciones instintivas</b> sin rol tan marcado.",
+      "options": [
+        { "text": "Son lo mismo", "is_correct": false, "position": 0 },
+        { "text": "Petplay sigue un rol concreto y estructurado; primal es más instintivo y menos definido", "is_correct": true, "position": 1 },
+        { "text": "El primal siempre incluye dolor", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "petplay",
+      "level": "master",
+      "position": 0,
+      "text": "Un handler nota que su pet lleva mucho tiempo en headspace profundo y tiene dificultad para volver a la normalidad al terminar. ¿Qué dice el protocolo?",
+      "explanation": "El headspace <b>reduce la capacidad de comunicación habitual</b> — el handler tiene responsabilidad activa en el regreso.",
+      "options": [
+        { "text": "Es responsabilidad exclusiva de la mascota salir sola", "is_correct": false, "position": 0 },
+        { "text": "El handler debe ayudar activamente en la transición de vuelta, como parte del aftercare de esta práctica", "is_correct": true, "position": 1 },
+        { "text": "No existe protocolo de salida en petplay", "is_correct": false, "position": 2 },
+        { "text": "Solo si la mascota lo pide con lenguaje humano completo", "is_correct": false, "position": 3 }
+      ]
+    },
+    {
+      "category_slug": "ageplay",
+      "level": "medio",
+      "position": 0,
+      "text": "\"DD/lg\" en ageplay describe:",
+      "explanation": "Es una <b>dinámica psicológica entre adultos</b>, ajena a la edad real de los participantes.",
+      "options": [
+        { "text": "Diferencia de edad real entre personas", "is_correct": false, "position": 0 },
+        { "text": "Una dinámica de rol entre adultos, de cuidado/autoridad — nunca involucra a menores", "is_correct": true, "position": 1 },
+        { "text": "Un término prohibido en toda comunidad BDSM", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "ageplay",
+      "level": "medio",
+      "position": 1,
+      "text": "Si la parte \"little\" pide salir del rol para hablar en serio:",
+      "explanation": "Ningún rol <b>puede retener</b> a alguien que necesita hablar en serio.",
+      "options": [
+        { "text": "Se mantiene el rol hasta el final de la sesión", "is_correct": false, "position": 0 },
+        { "text": "Se sale de inmediato, sin condiciones", "is_correct": true, "position": 1 },
+        { "text": "Solo con una palabra de seguridad específica", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "ageplay",
+      "level": "master",
+      "position": 0,
+      "text": "En ageplay, la parte \"Daddy/Mommy\" empieza, sin haberlo hablado antes, a tomar decisiones de la vida real de la otra persona (dinero, trabajo) usando el marco del rol como justificación. ¿Qué es esto?",
+      "explanation": "El rol <b>no da permiso automático</b> para tomar decisiones reales no negociadas — usar el juego como excusa para control real es justo la señal de alerta a vigilar.",
+      "options": [
+        { "text": "Una evolución natural del rol si lleva tiempo funcionando bien", "is_correct": false, "position": 0 },
+        { "text": "Una expansión de control no negociada, que excede lo acordado en el juego de rol original", "is_correct": true, "position": 1 },
+        { "text": "Es aceptable mientras se mantenga el vocabulario del rol", "is_correct": false, "position": 2 },
+        { "text": "Depende de la edad real de ambos", "is_correct": false, "position": 3 }
+      ]
+    },
+    {
+      "category_slug": "chastity",
+      "level": "medio",
+      "position": 0,
+      "text": "Un \"keyholder\" en dinámicas de chastity (cinturón de castidad) es:",
+      "explanation": "El keyholder tiene <b>un rol de control acordado</b> sobre el dispositivo, dentro de los límites que la pareja haya negociado.",
+      "options": [
+        { "text": "Solo un término decorativo sin función real", "is_correct": false, "position": 0 },
+        { "text": "Quien controla el acceso/liberación del dispositivo, según lo acordado", "is_correct": true, "position": 1 },
+        { "text": "Siempre debe ser un profesional certificado", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "chastity",
+      "level": "medio",
+      "position": 1,
+      "text": "En chastity, ¿qué debe primar si hay molestia física real con el dispositivo?",
+      "explanation": "<b>El bienestar físico</b> siempre tiene prioridad sobre cualquier acuerdo de tiempo o control.",
+      "options": [
+        { "text": "Aguantar hasta el tiempo acordado, siempre", "is_correct": false, "position": 0 },
+        { "text": "Retirarlo o ajustarlo, la salud física está por encima del protocolo", "is_correct": true, "position": 1 },
+        { "text": "Solo se puede quitar si lo decide el keyholder", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "chastity",
+      "level": "master",
+      "position": 0,
+      "text": "Un keyholder decide extender unilateralmente el tiempo de un dispositivo de chastity más allá de lo acordado, argumentando que \"así se refuerza el compromiso\". ¿Qué falla aquí?",
+      "explanation": "El rol de keyholder <b>no incluye permiso para modificar acuerdos unilateralmente</b>. Cualquier cambio de lo pactado necesita renegociarse, no justificarse a posteriori.",
+      "options": [
+        { "text": "Nada, es una decisión válida del keyholder por definición del rol", "is_correct": false, "position": 0 },
+        { "text": "Cambiar unilateralmente lo acordado sin renegociar rompe el consentimiento, independientemente de la justificación dada", "is_correct": true, "position": 1 },
+        { "text": "Solo falla si el dispositivo causa dolor físico", "is_correct": false, "position": 2 },
+        { "text": "El keyholder siempre tiene la última palabra sobre el tiempo", "is_correct": false, "position": 3 }
+      ]
+    },
+    {
+      "category_slug": "rituales",
+      "level": "medio",
+      "position": 0,
+      "text": "Una sesión de \"inspección\" (revisión del cuerpo del sumiso) dentro del protocolo:",
+      "explanation": "La inspección <b>no tiene un significado fijo</b> — puede ser un ritual simbólico de atención y cuidado, no necesariamente sexual.",
+      "options": [
+        { "text": "Siempre tiene un componente sexual explícito", "is_correct": false, "position": 0 },
+        { "text": "Puede ser puramente ritual, sin fin sexual, según lo acordado", "is_correct": true, "position": 1 },
+        { "text": "Es obligatoria en cualquier dinámica D/s", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "rituales",
+      "level": "master",
+      "position": 0,
+      "text": "Durante una inspección ritual con público reducido (otros miembros de confianza presentes), el sumiso muestra señales de incomodidad que no expresó al negociar. ¿Qué prevalece?",
+      "explanation": "Haber aceptado <b>el marco general</b> (público, ritual) no anula el derecho a que el malestar en el momento se atienda — el consentimiento sigue siendo continuo dentro de ese marco.",
+      "options": [
+        { "text": "Lo negociado previamente, ya que el público fue acordado de antemano", "is_correct": false, "position": 0 },
+        { "text": "El malestar en tiempo real, aunque el contexto (público) se hubiera aceptado antes", "is_correct": true, "position": 1 },
+        { "text": "Solo se detiene si lo pide explícitamente con la palabra de seguridad", "is_correct": false, "position": 2 },
+        { "text": "Depende de si el público son desconocidos o conocidos", "is_correct": false, "position": 3 }
+      ]
+    },
+    {
+      "category_slug": "brat",
+      "level": "medio",
+      "position": 0,
+      "text": "El término \"brat\" describe a alguien que:",
+      "explanation": "Un \"brat\" <b>provoca dentro del rol</b> como parte de la dinámica — no es una falta de sumisión, sino <b>un estilo concreto</b> de ella.",
+      "options": [
+        { "text": "Nunca puede ser sumiso, es un rol opuesto", "is_correct": false, "position": 0 },
+        { "text": "Desafía o provoca activamente a su Dominante como parte del juego, dentro de lo acordado", "is_correct": true, "position": 1 },
+        { "text": "Es sinónimo de \"switch\"", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "brat",
+      "level": "medio",
+      "position": 1,
+      "text": "\"Brat taming\" (domar al brat) se refiere a:",
+      "explanation": "Es <b>la otra mitad del juego</b> brat/Dominante — una dinámica de pulso lúdico, siempre dentro de lo que ambos han acordado de antemano.",
+      "options": [
+        { "text": "Un castigo físico obligatorio ante cualquier provocación", "is_correct": false, "position": 0 },
+        { "text": "La respuesta del Dominante al desafío del brat, dentro del juego acordado por ambos", "is_correct": true, "position": 1 },
+        { "text": "Un término usado solo fuera del BDSM", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "brat",
+      "level": "master",
+      "position": 0,
+      "text": "Una persona con rol \"brat\" provoca activamente a su Dominante durante una escena. En un momento, el Dominante responde con una intensidad que el brat no esperaba y que le genera malestar real, no lúdico. ¿Qué principio se aplica aquí?",
+      "explanation": "Provocar dentro del juego <b>no elimina la necesidad de leer malestar real</b>. El rol de brat no convierte cualquier respuesta en automáticamente válida — sigue habiendo un límite entre juego e incomodidad genuina.",
+      "options": [
+        { "text": "El brat \"se lo buscó\" al provocar, así que debe asumirlo", "is_correct": false, "position": 0 },
+        { "text": "El juego brat/Dominante sigue exigiendo lectura de señales reales; provocar no es un cheque en blanco para cualquier respuesta", "is_correct": true, "position": 1 },
+        { "text": "El brat taming no tiene límites por definición", "is_correct": false, "position": 2 },
+        { "text": "Solo cuenta si se usó la palabra de seguridad", "is_correct": false, "position": 3 }
+      ]
+    },
+    {
+      "category_slug": "comunidad-social",
+      "level": "medio",
+      "position": 0,
+      "text": "El \"munch\" es:",
+      "explanation": "Un munch es <b>un espacio social</b> (a menudo en cafeterías o bares) para conocer gente de la comunidad, no un espacio de práctica.",
+      "options": [
+        { "text": "Una práctica física de impacto", "is_correct": false, "position": 0 },
+        { "text": "Una quedada social e informal de la comunidad kink, normalmente sin actividad sexual ni de escena", "is_correct": true, "position": 1 },
+        { "text": "Un sinónimo de \"dungeon\"", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "comunidad-social",
+      "level": "medio",
+      "position": 1,
+      "text": "Si en un munch alguien pregunta directamente por tus prácticas sexuales, ¿qué es lo esperado?",
+      "explanation": "Preguntar por <b>detalles sexuales</b> en un espacio social <b>rompe la etiqueta</b> — el munch no es el contexto para eso.",
+      "options": [
+        { "text": "Es normal y se debe responder con detalle", "is_correct": false, "position": 0 },
+        { "text": "No es apropiado; el munch es un espacio social, no de intimidad expuesta", "is_correct": true, "position": 1 },
+        { "text": "Depende de cuánta gente haya alrededor", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "comunidad-social",
+      "level": "master",
+      "position": 0,
+      "text": "Alguien de la comunidad comparte, sin nombres, detalles muy identificables de una escena ajena (lugar exacto, fecha, descripción física) en un grupo online. Aunque no usa nombres reales, ¿qué falla?",
+      "explanation": "La privacidad <b>no depende solo del nombre</b> — combinar suficientes detalles (lugar, fecha, descripción) puede identificar a alguien igual de claramente, rompiendo el mismo principio de discreción.",
+      "options": [
+        { "text": "Nada, mientras no haya nombres no hay problema de privacidad", "is_correct": false, "position": 0 },
+        { "text": "Los detalles suficientemente identificables pueden romper la privacidad igual que un nombre explícito", "is_correct": true, "position": 1 },
+        { "text": "Solo falla si la persona descrita lo pide expresamente después", "is_correct": false, "position": 2 },
+        { "text": "Es aceptable si el grupo es privado", "is_correct": false, "position": 3 }
+      ]
+    },
+    {
+      "category_slug": "comunidad-social",
+      "level": "master",
+      "position": 1,
+      "text": "Alguien nuevo pide que le \"enseñen\" técnicas de una práctica de riesgo (ej. suspension) sin experiencia previa, y un miembro experimentado accede a solas, sin supervisión adicional. ¿Qué principio de protocolo comunitario se está saltando?",
+      "explanation": "En prácticas de <b>alto riesgo físico</b>, el protocolo comunitario recomienda supervisión adicional más allá del acuerdo entre dos personas — el consentimiento mutuo no sustituye una red de seguridad extra cuando hay poca experiencia de por medio.",
+      "options": [
+        { "text": "Ninguno, si el miembro experimentado da su consentimiento de enseñar", "is_correct": false, "position": 0 },
+        { "text": "La práctica de contar con supervisión o acompañamiento extra en actividades de alto riesgo con principiantes, más allá del consentimiento mutuo de los dos implicados", "is_correct": true, "position": 1 },
+        { "text": "Solo es un problema si el principiante se lesiona", "is_correct": false, "position": 2 },
+        { "text": "Es responsabilidad exclusiva del principiante evaluar el riesgo", "is_correct": false, "position": 3 }
+      ]
+    },
+    {
+      "category_slug": "negociacion-avanzada",
+      "level": "medio",
+      "position": 0,
+      "text": "Una \"checklist\" de negociación (documento con actividades y niveles de interés) sirve para:",
+      "explanation": "La checklist <b>facilita</b> la conversación, pero <b>no la sustituye</b> — los matices reales solo salen hablando.",
+      "options": [
+        { "text": "Sustituir la conversación real entre la pareja", "is_correct": false, "position": 0 },
+        { "text": "Ser un punto de partida que luego se conversa y matiza, no un documento definitivo por sí solo", "is_correct": true, "position": 1 },
+        { "text": "Es solo útil para principiantes", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "negociacion-avanzada",
+      "level": "medio",
+      "position": 1,
+      "text": "Si dos personas rellenan una checklist y en algo aparecen niveles de interés muy distintos, lo correcto es:",
+      "explanation": "Una diferencia en la checklist es <b>el inicio de una conversación</b>, no un desempate automático a favor de nadie.",
+      "options": [
+        { "text": "Ir con lo que marcó el Dominante", "is_correct": false, "position": 0 },
+        { "text": "Hablarlo directamente, sin asumir automáticamente quién \"gana\"", "is_correct": true, "position": 1 },
+        { "text": "Descartar esa actividad para siempre sin discutirla", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "negociacion-avanzada",
+      "level": "master",
+      "position": 0,
+      "text": "Una pareja negoció hace un año una checklist detallada. Uno de los dos asume que sigue vigente tal cual, sin haberla revisado desde entonces, y basa una escena nueva en eso. ¿Qué falla?",
+      "explanation": "El consentimiento se basa en el <b>estado actual</b> de la persona, no en un documento estático. Sin revisión periódica, no se puede asumir que sigue reflejando la realidad.",
+      "options": [
+        { "text": "Nada, una checklist firmada una vez es válida indefinidamente", "is_correct": false, "position": 0 },
+        { "text": "Los intereses y límites pueden cambiar; una checklist antigua sin revisar no garantiza consentimiento actual", "is_correct": true, "position": 1 },
+        { "text": "Solo falla si explícitamente se dijo que algo había cambiado", "is_correct": false, "position": 2 },
+        { "text": "Las checklists nunca caducan si la pareja sigue junta", "is_correct": false, "position": 3 }
+      ]
+    },
+    {
+      "category_slug": "negociacion-avanzada",
+      "level": "master",
+      "position": 1,
+      "text": "Una pareja acuerda una escena con un límite duro claro. A mitad de la escena, la persona que puso el límite empieza a decir, en tono de juego dentro del rol, frases que podrían interpretarse como pedir cruzar ese límite. ¿Qué dicta el protocolo?",
+      "explanation": "Un límite duro <b>no se cruza por una frase ambigua dentro del juego de rol</b>. Si de verdad se quiere renegociar, debe hacerse con claridad explícita, normalmente saliendo del personaje.",
+      "options": [
+        { "text": "Se respeta lo dicho en el momento, el consentimiento siempre es lo último que se dice", "is_correct": false, "position": 0 },
+        { "text": "El límite duro acordado previamente prevalece sobre expresiones ambiguas dentro del rol, salvo renegociación clara y explícita fuera del personaje", "is_correct": true, "position": 1 },
+        { "text": "Se detiene la escena entera sin posibilidad de continuar", "is_correct": false, "position": 2 },
+        { "text": "Depende de si quien lo dice es el Dominante o el sumiso", "is_correct": false, "position": 3 }
+      ]
+    },
+    {
+      "category_slug": "disciplina-avanzada",
+      "level": "medio",
+      "position": 0,
+      "text": "Una \"corner time\" o tiempo de reflexión como consecuencia acordada busca:",
+      "explanation": "Es una <b>consecuencia simbólica y acordada</b>, pensada para pausar y reflexionar — no para humillar ni evitar hablar después.",
+      "options": [
+        { "text": "Humillar públicamente a la persona", "is_correct": false, "position": 0 },
+        { "text": "Dar un espacio de pausa y reflexión, dentro de lo pactado de antemano", "is_correct": true, "position": 1 },
+        { "text": "Sustituir cualquier conversación posterior", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "disciplina-avanzada",
+      "level": "master",
+      "position": 0,
+      "text": "Un Dominante aplica una \"corner time\" como consecuencia, pero la extiende mucho más allá de lo acordado porque \"cree que hace falta más reflexión\". ¿Qué principio se rompe?",
+      "explanation": "Igual que con cualquier otro protocolo, <b>una consecuencia acordada tiene los términos que se pactaron</b> — modificarlos unilateralmente, aunque sea con buena intención, rompe el consentimiento sobre esa consecuencia.",
+      "options": [
+        { "text": "Ninguno, el Dominante puede ajustar la duración según su criterio", "is_correct": false, "position": 0 },
+        { "text": "La duración y condiciones de una consecuencia deben respetar lo acordado; extenderla unilateralmente rompe ese pacto", "is_correct": true, "position": 1 },
+        { "text": "Solo importa si la persona se queja en el momento", "is_correct": false, "position": 2 },
+        { "text": "Las consecuencias no tienen límite de tiempo por definición", "is_correct": false, "position": 3 }
+      ]
+    },
+    {
+      "category_slug": "disciplina-avanzada",
+      "level": "master",
+      "position": 1,
+      "text": "En una dinámica de servicio, el sumiso empieza a anticiparse y ejecutar tareas no pedidas explícitamente, asumiendo que \"es lo que el Amo/Ama querría\". Con el tiempo, esto genera expectativas nuevas no habladas. ¿Qué riesgo de protocolo aparece aquí?",
+      "explanation": "Cuando <b>el protocolo crece por costumbre</b> en vez de por acuerdo explícito, se corre el riesgo de que ninguna de las dos partes haya consentido realmente el nuevo nivel — conviene revisarlo con la misma comunicación que cualquier otro cambio.",
+      "options": [
+        { "text": "Ninguno, la iniciativa siempre es positiva en dinámicas de servicio", "is_correct": false, "position": 0 },
+        { "text": "El protocolo puede expandirse de facto sin negociación explícita, generando expectativas que nadie acordó realmente", "is_correct": true, "position": 1 },
+        { "text": "Es responsabilidad exclusiva del Amo/Ama frenar esto", "is_correct": false, "position": 2 },
+        { "text": "Solo es un problema si el sumiso se queja después", "is_correct": false, "position": 3 }
+      ]
+    },
+    {
+      "category_slug": "servicio",
+      "level": "master",
+      "position": 0,
+      "text": "Dos personas con dinámica D/s de larga duración dejan de hacer check-ins regulares \"porque ya se conocen muy bien\". Meses después, uno de los dos revela que llevaba tiempo incómodo con algo del protocolo. ¿Qué error de fondo hay aquí?",
+      "explanation": "<b>Ningún nivel de confianza o experiencia mutua</b> hace innecesaria la comunicación activa — las cosas cambian, y sin canales abiertos, pueden pasar desapercibidas durante mucho tiempo.",
+      "options": [
+        { "text": "Ninguno, el tiempo de relación sustituye la necesidad de check-ins", "is_correct": false, "position": 0 },
+        { "text": "Confiar en el conocimiento mutuo no sustituye la comunicación activa y regular; los sentimientos pueden cambiar sin que se note desde fuera", "is_correct": true, "position": 1 },
+        { "text": "El error fue del sumiso por no hablar antes", "is_correct": false, "position": 2 },
+        { "text": "Solo es un error si la relación termina por esto", "is_correct": false, "position": 3 }
       ]
     }
   ]
