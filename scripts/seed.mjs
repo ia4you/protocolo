@@ -1,11 +1,13 @@
 // Carga db/seed/questions.json en la BD. Es idempotente y conserva los ids:
-// categorías por slug, preguntas por (categoría, posición) y opciones por
-// (pregunta, posición) se actualizan solo si cambian. Todo en una transacción.
+// categorías por slug, preguntas por (nivel, categoría, posición) y opciones
+// por (pregunta, posición) se actualizan solo si cambian. Todo en una transacción.
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import pg from "pg";
 
 const SEED_FILE = path.join(process.cwd(), "db", "seed", "questions.json");
+// Igual que lib/levels.js y el CHECK de questions.level
+const LEVELS = ["amateur", "medio", "master"];
 
 function validate({ categories, questions }) {
   const errors = [];
@@ -16,9 +18,10 @@ function validate({ categories, questions }) {
 
   const questionKeys = new Set();
   for (const q of questions) {
-    const where = `Pregunta ${q.category_slug}#${q.position}`;
+    const where = `Pregunta ${q.level}/${q.category_slug}#${q.position}`;
+    if (!LEVELS.includes(q.level)) errors.push(`${where}: level debe ser uno de ${LEVELS.join(", ")}`);
     if (!slugs.has(q.category_slug)) errors.push(`${where}: categoría inexistente`);
-    const key = `${q.category_slug}#${q.position}`;
+    const key = `${q.level}#${q.category_slug}#${q.position}`;
     if (questionKeys.has(key)) errors.push(`${where}: posición repetida`);
     questionKeys.add(key);
 
@@ -73,8 +76,8 @@ try {
   for (const q of data.questions) {
     const categoryId = categoryIds[q.category_slug];
     const existing = await client.query(
-      "SELECT id FROM questions WHERE category_id = $1 AND position = $2",
-      [categoryId, q.position]
+      "SELECT id FROM questions WHERE level = $1 AND category_id = $2 AND position = $3",
+      [q.level, categoryId, q.position]
     );
     let questionId;
     if (existing.rows.length) {
@@ -87,9 +90,9 @@ try {
       stats.questionsUpdated += rowCount;
     } else {
       const { rows } = await client.query(
-        `INSERT INTO questions (category_id, text, explanation, position)
-         VALUES ($1, $2, $3, $4) RETURNING id`,
-        [categoryId, q.text, q.explanation, q.position]
+        `INSERT INTO questions (level, category_id, text, explanation, position)
+         VALUES ($1, $2, $3, $4, $5) RETURNING id`,
+        [q.level, categoryId, q.text, q.explanation, q.position]
       );
       questionId = rows[0].id;
       stats.questionsInserted++;

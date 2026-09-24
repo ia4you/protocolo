@@ -1,11 +1,17 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
+import { LEVEL_LABELS } from "@/lib/levels";
 import ProtocolIcon from "./ProtocolIcon";
 import ExplanationSheet from "./ExplanationSheet";
+import Shell, { SecondaryButton } from "./Shell";
 
-const STORAGE_KEY = "protocolo:quiz";
 const ADVANCE_DELAY_MS = 700;
+
+// Progreso separado por nivel, para que cambiar de nivel no lo mezcle
+const storageKey = (level) => `protocolo:quiz:${level}`;
+// Clave de antes de existir niveles (todas eran amateur)
+const LEGACY_KEY = "protocolo:quiz";
 
 // Categorías anidadas → lista plana de preguntas
 function flatten(categories) {
@@ -31,9 +37,12 @@ function freshState(questions) {
 }
 
 // Progreso guardado en esta pestaña, solo si sigue encajando con las preguntas
-function restoreState(questions) {
+function restoreState(level, questions) {
   try {
-    const saved = JSON.parse(sessionStorage.getItem(STORAGE_KEY));
+    const raw =
+      sessionStorage.getItem(storageKey(level)) ??
+      (level === "amateur" ? sessionStorage.getItem(LEGACY_KEY) : null);
+    const saved = JSON.parse(raw);
     const ids = new Set(questions.map((q) => q.id));
     const valid =
       saved?.order?.length === ids.size &&
@@ -48,7 +57,7 @@ function restoreState(questions) {
   return null;
 }
 
-export default function Quiz() {
+export default function Quiz({ level, onChangeLevel }) {
   const [questions, setQuestions] = useState(null);
   const [state, setState] = useState(null);
   const [loadError, setLoadError] = useState(false);
@@ -58,26 +67,26 @@ export default function Quiz() {
   const load = useCallback(async () => {
     setLoadError(false);
     try {
-      const res = await fetch("/api/questions");
+      const res = await fetch(`/api/questions?level=${encodeURIComponent(level)}`);
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const list = flatten((await res.json()).categories);
       setQuestions(list);
-      setState(restoreState(list) ?? freshState(list));
+      setState(restoreState(level, list) ?? freshState(list));
     } catch {
       setLoadError(true);
     }
-  }, []);
+  }, [level]);
 
   useEffect(() => {
     load();
   }, [load]);
 
   useEffect(() => {
-    if (!state) return;
+    if (!state || state.order.length === 0) return;
     try {
-      sessionStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      sessionStorage.setItem(storageKey(level), JSON.stringify(state));
     } catch {}
-  }, [state]);
+  }, [level, state]);
 
   const byId = useMemo(
     () => Object.fromEntries((questions ?? []).map((q) => [q.id, q])),
@@ -146,18 +155,30 @@ export default function Quiz() {
     ? Object.values(state.answers).filter((a) => a.correct).length
     : 0;
   const scorePct = total ? Math.round((score / total) * 100) : 0;
-  const progressPct = finished ? 100 : total ? (index / total) * 100 : 0;
+  const empty = state !== null && total === 0;
+  const progressPct = empty ? 0 : finished ? 100 : total ? (index / total) * 100 : 0;
 
   let body;
   if (loadError) {
     body = (
       <div className="py-6 text-center">
         <p className="mb-6 text-ink-dim">No se pudieron cargar las preguntas.</p>
-        <RestartButton onClick={load}>Reintentar</RestartButton>
+        <SecondaryButton onClick={load}>Reintentar</SecondaryButton>
       </div>
     );
   } else if (!state) {
     body = <p className="py-10 text-center text-sm text-ink-dim">Cargando…</p>;
+  } else if (empty) {
+    body = (
+      <div className="pt-4 text-center">
+        <ProtocolIcon name="ladder" className="mx-auto mb-6 h-[88px] w-[88px] text-ink" />
+        <h2 className="mb-2 font-serif text-[1.6rem] font-medium">Próximamente</h2>
+        <p className="mb-[1.6rem] text-ink-dim">
+          Todavía no hay preguntas de nivel {LEVEL_LABELS[level]}.
+        </p>
+        <SecondaryButton onClick={onChangeLevel}>Elegir otro nivel</SecondaryButton>
+      </div>
+    );
   } else if (finished) {
     body = (
       <div className="pt-4 text-center">
@@ -169,7 +190,7 @@ export default function Quiz() {
         <p className="mb-[1.6rem] text-[0.9rem] text-ink-dim">
           {score} de {total} respuestas correctas al primer intento.
         </p>
-        <RestartButton onClick={restart}>Empezar de nuevo</RestartButton>
+        <SecondaryButton onClick={restart}>Empezar de nuevo</SecondaryButton>
       </div>
     );
   } else {
@@ -209,44 +230,44 @@ export default function Quiz() {
     );
   }
 
+  const counter = state && !empty && (
+    <span className="text-[0.8rem] tabular-nums text-ink-dim">
+      <span className="text-ok-soft" aria-live="polite">
+        {score} {score === 1 ? "acierto" : "aciertos"}
+      </span>
+      <span className="mx-2 text-line" aria-hidden="true">·</span>
+      <span>
+        {finished ? total : index + 1} / {total}
+      </span>
+    </span>
+  );
+
+  const changeLevelLink = !empty && (
+    <button
+      type="button"
+      onClick={onChangeLevel}
+      className="mx-auto mt-5 block text-[0.8rem] text-ink-dim underline-offset-4 hover:text-ink hover:underline"
+    >
+      Cambiar nivel
+    </button>
+  );
+
   return (
-    <main className="flex min-h-dvh justify-center">
-      <div className="w-full max-w-[460px] px-5 pb-12 pt-10">
-        <div className="mb-[1.4rem] flex items-baseline justify-between">
-          <span className="font-serif text-[1.05rem] tracking-[0.02em] text-ink-dim">Protocolo</span>
-          {state && (
-            <span className="text-[0.8rem] tabular-nums text-ink-dim">
-              <span className="text-ok-soft" aria-live="polite">
-                {score} {score === 1 ? "acierto" : "aciertos"}
-              </span>
-              <span className="mx-2 text-line" aria-hidden="true">·</span>
-              <span>
-                {finished ? total : index + 1} / {total}
-              </span>
-            </span>
-          )}
-        </div>
-        <div className="mb-8 h-0.5 overflow-hidden rounded-sm bg-line">
-          <div
-            className="h-full bg-accent-soft transition-[width] duration-[400ms] ease-in-out"
-            style={{ width: `${progressPct}%` }}
-          />
-        </div>
-
-        <div className="rounded-md border border-line bg-paper px-[1.6rem] pb-[1.8rem] pt-8">
-          {body}
-          <div className="mt-[1.8rem] border-t border-line pt-[1.1rem] text-center text-[0.72rem] tracking-[0.03em] text-ink-dim">
-            Desarrollado por @Turel-SM
-          </div>
-        </div>
-      </div>
-
+    <>
+      <Shell
+        subtitle={LEVEL_LABELS[level]}
+        headerRight={counter}
+        progress={progressPct}
+        below={changeLevelLink}
+      >
+        {body}
+      </Shell>
       <ExplanationSheet
         open={Boolean(answer && !answer.correct)}
         explanation={answer?.explanation}
         onClose={closeSheet}
       />
-    </main>
+    </>
   );
 }
 
@@ -258,16 +279,4 @@ function optionClass(optionId, answer, pendingOption) {
   }
   if (optionId === pendingOption) return "cursor-default border-accent-soft bg-bg-2";
   return "cursor-pointer border-line bg-bg-2 hover:border-accent-soft active:scale-[0.995]";
-}
-
-function RestartButton({ onClick, children }) {
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      className="rounded-[5px] border border-line bg-bg-2 px-[1.4rem] py-3 text-ink hover:border-accent-soft"
-    >
-      {children}
-    </button>
-  );
 }

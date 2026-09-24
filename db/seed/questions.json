@@ -11,11 +11,15 @@
     { "slug": "permisos", "name": "Dinámica de poder · Permiso y acceso", "icon": "route", "position": 8 },
     { "slug": "negociacion", "name": "Consentimiento · Negociación previa", "icon": "route", "position": 9 },
     { "slug": "escena", "name": "Durante la escena", "icon": "shield", "position": 10 },
-    { "slug": "cierre", "name": "Cierre · Aftercare", "icon": "rings", "position": 11 }
+    { "slug": "cierre", "name": "Cierre · Aftercare", "icon": "rings", "position": 11 },
+    { "slug": "bondage", "name": "Protocolo en Bondage", "icon": "thread", "position": 13 },
+    { "slug": "cuerdas", "name": "Protocolo en Cuerdas / Shibari", "icon": "diamond", "position": 14 },
+    { "slug": "spanking", "name": "Protocolo en Spanking / Impact", "icon": "threshold", "position": 15 }
   ],
   "questions": [
     {
       "category_slug": "trato",
+      "level": "amateur",
       "position": 0,
       "text": "¿Quién decide el título que usará el sumiso con su propio Amo/Ama (ej. “Amo”, “Señor”, un nombre)?",
       "explanation": "El título dentro de <b>una relación concreta</b> no lo impone ninguna regla general del BDSM. Puede coincidir con “Señor”, pero es cosa de esa pareja decidirlo, no un estándar fijo.",
@@ -27,6 +31,7 @@
     },
     {
       "category_slug": "comunidad",
+      "level": "amateur",
       "position": 0,
       "text": "En un club o munch, ¿cómo se suele tratar a un Dominante que no conoces?",
       "explanation": "Es <b>cortesía social del espacio</b>, no una ley del BDSM. Cada comunidad tiene sus propias costumbres, y no todas la aplican.",
@@ -38,6 +43,7 @@
     },
     {
       "category_slug": "comunidad",
+      "level": "amateur",
       "position": 1,
       "text": "En un dungeon o club, si ves equipo (cuerdas, cruces, etc.) que no estás usando:",
       "explanation": "El equipo, aunque esté en un espacio compartido, <b>no es de uso libre</b>. Se pide permiso, igual que con cualquier pertenencia ajena.",
@@ -49,6 +55,7 @@
     },
     {
       "category_slug": "comunidad",
+      "level": "amateur",
       "position": 2,
       "text": "Si estás en un club y ves una escena de otras personas en curso, ¿qué es lo correcto?",
       "explanation": "Una escena ajena <b>no se interrumpe ni se comenta</b>, aunque el espacio sea público. La privacidad de esa escena se respeta igual que en cualquier otro contexto.",
@@ -60,6 +67,7 @@
     },
     {
       "category_slug": "comunidad",
+      "level": "amateur",
       "position": 3,
       "text": "Sobre hacer fotos en un espacio kink (club, munch, fiesta privada):",
       "explanation": "La regla de privacidad en estos espacios es <b>estricta por defecto</b>: sin consentimiento explícito, no hay fotos, ni de personas ni de nombres reales.",
@@ -71,6 +79,7 @@
     },
     {
       "category_slug": "comunidad",
+      "level": "amateur",
       "position": 4,
       "text": "Un \"safe call\" al quedar con alguien nuevo de una app o comunidad online consiste en:",
       "explanation": "Es una <b>medida de seguridad básica</b>, no una señal de desconfianza hacia la otra persona — se recomienda para cualquier primer encuentro con alguien que no conoces en persona.",
@@ -82,6 +91,7 @@
     },
     {
       "category_slug": "comunidad",
+      "level": "amateur",
       "position": 5,
       "text": "¿Las normas de un club o munch concreto (etiqueta, vestimenta, protocolos de saludo) aplican igual en cualquier otro espacio kink?",
       "explanation": "Como con casi todo lo visto en este quiz, <b>no hay un reglamento universal</b> — cada comunidad y cada espacio define sus propias normas.",
@@ -93,6 +103,7 @@
     },
     {
       "category_slug": "discrecion",
+      "level": "amateur",
       "position": 0,
       "text": "Si un Amo/Ama y su sumiso están en una comida familiar, ¿qué es lo más común?",
       "explanation": "Fuera de espacios kink casi siempre se guarda discreción. La dinámica <b>no desaparece</b>, solo no se muestra ante quien no la conoce o no la consintió.",
@@ -104,6 +115,7 @@
     },
     {
       "category_slug": "discrecion",
+      "level": "amateur",
       "position": 1,
       "text": "Si están con amigos que no saben nada de su dinámica D/s, ¿qué suelen hacer?",
       "explanation": "Se prioriza la discreción: no hace falta ocultar que son pareja, solo <b>no exponer el protocolo específico</b> ante quien no lo conoce.",
@@ -115,6 +127,7 @@
     },
     {
       "category_slug": "discrecion",
+      "level": "amateur",
       "position": 2,
       "text": "En el trabajo, si el Amo/Ama necesita comunicarse con su sumiso, ¿qué es lo más adecuado?",
       "explanation": "El trabajo prioriza privacidad y profesionalidad. El protocolo especial <b>queda para espacios privados</b> o acordados de antemano.",
@@ -126,6 +139,7 @@
     },
     {
       "category_slug": "discrecion",
+      "level": "amateur",
       "position": 3,
       "text": "Algunas parejas usan señales discretas (una palabra, un gesto) para mantener conexión en público. Esto es:",
       "explanation": "No todas las parejas lo usan. Es un recurso <b>opcional</b> para sentir la dinámica activa sin exponerla, si así lo acuerdan.",
@@ -137,6 +151,7 @@
     },
     {
       "category_slug": "discrecion",
+      "level": "amateur",
       "position": 4,
       "text": "Si el sumiso olvida sin querer usar el título acordado delante de gente de confianza, ¿qué es lo más sano?",
       "explanation": "Los errores se corrigen <b>en privado y con calma</b>. El protocolo no es una excusa para exponer o humillar a nadie delante de otros.",
@@ -148,6 +163,7 @@
     },
     {
       "category_slug": "discrecion",
+      "level": "amateur",
       "position": 5,
       "text": "Si viajan y comparten habitación con amigos no-kink, ¿qué suele pasar con las rutinas nocturnas acordadas?",
       "explanation": "La privacidad y comodidad de terceros importa. Las rutinas <b>se ajustan a la realidad del momento</b>, no al revés.",
@@ -159,6 +175,7 @@
     },
     {
       "category_slug": "discrecion",
+      "level": "amateur",
       "position": 6,
       "text": "Si el sumiso prefiere mantener el protocolo siempre, incluso en familia, ¿qué puede hacer?",
       "explanation": "El protocolo lo deciden ambos. Si algo no encaja, <b>se renegocia</b> — no hay una única forma correcta de manejarlo.",
@@ -170,6 +187,7 @@
     },
     {
       "category_slug": "discrecion",
+      "level": "amateur",
       "position": 7,
       "text": "En una reunión familiar, si alguien pregunta directamente sobre la relación, ¿qué es razonable?",
       "explanation": "Cada pareja decide <b>cuánto compartir</b> de su vida privada. No hay obligación de revelar la dinámica ni de ocultar que son pareja.",
@@ -181,6 +199,7 @@
     },
     {
       "category_slug": "discrecion",
+      "level": "amateur",
       "position": 8,
       "text": "Si el Amo/Ama aplica el protocolo completo en una cena familiar sin hablarlo antes, ¿qué indica esto?",
       "explanation": "Cambiar el protocolo en un contexto sensible sin acuerdo previo <b>rompe la confianza</b>. Todo cambio de contexto debería hablarse antes.",
@@ -192,6 +211,7 @@
     },
     {
       "category_slug": "comunicacion",
+      "level": "amateur",
       "position": 0,
       "text": "Si el sumiso no está de acuerdo con algo, ¿qué debería poder hacer?",
       "explanation": "Incluso en dinámicas estrictas debe existir un canal para expresar desacuerdo. <b>El protocolo no elimina la voz del sumiso.</b>",
@@ -203,6 +223,7 @@
     },
     {
       "category_slug": "comunicacion",
+      "level": "amateur",
       "position": 1,
       "text": "Los “check-ins” o reportes regulares (cómo se siente, si cumplió tareas) sirven para:",
       "explanation": "Son una herramienta de <b>cuidado y ajuste mutuo</b>, no solo de control. Su frecuencia e intensidad depende de lo acordado.",
@@ -214,6 +235,7 @@
     },
     {
       "category_slug": "comunicacion",
+      "level": "amateur",
       "position": 2,
       "text": "¿Es necesario pedir permiso para hablar en toda dinámica D/s?",
       "explanation": "No es un requisito universal. Algunas parejas lo incluyen como parte del protocolo, <b>otras no lo usan en absoluto</b>.",
@@ -225,6 +247,7 @@
     },
     {
       "category_slug": "comunicacion",
+      "level": "amateur",
       "position": 3,
       "text": "Si el Amo/Ama nota que su sumiso está incómodo pero no lo dice, ¿qué es lo recomendable?",
       "explanation": "La comunicación es responsabilidad de <b>ambas partes</b>, no solo del sumiso. Un buen Amo/Ama también observa y pregunta.",
@@ -236,6 +259,7 @@
     },
     {
       "category_slug": "postura",
+      "level": "amateur",
       "position": 0,
       "text": "¿Es obligatorio arrodillarse ante el Amo/Ama en toda dinámica D/s?",
       "explanation": "No hay una postura \"correcta\" fija. Arrodillarse, bajar la mirada o cualquier otro gesto es <b>una elección de esa pareja</b>, no una norma general.",
@@ -247,6 +271,7 @@
     },
     {
       "category_slug": "postura",
+      "level": "amateur",
       "position": 1,
       "text": "Si el sumiso tiene una lesión y una postura acordada le hace daño, ¿qué debería pasar?",
       "explanation": "<b>El bienestar físico siempre tiene prioridad</b> sobre cualquier protocolo. Un buen Amo/Ama ajusta la postura o la pausa sin que haga falta pedirlo con miedo.",
@@ -258,6 +283,7 @@
     },
     {
       "category_slug": "postura",
+      "level": "amateur",
       "position": 2,
       "text": "El contacto visual en presencia del Amo/Ama:",
       "explanation": "Como con el resto de posturas, <b>se acuerda entre la pareja</b>. Algunas dinámicas usan evitar la mirada como protocolo, otras no lo incluyen en absoluto.",
@@ -269,6 +295,7 @@
     },
     {
       "category_slug": "servicio",
+      "level": "amateur",
       "position": 0,
       "text": "Las tareas o rutinas que un sumiso realiza para su Amo/Ama (domésticas, personales, rituales):",
       "explanation": "El \"servicio\" no tiene un contenido fijo. Puede ser algo simbólico o muy concreto — <b>lo define esa pareja</b>, no una plantilla general.",
@@ -280,6 +307,7 @@
     },
     {
       "category_slug": "servicio",
+      "level": "amateur",
       "position": 1,
       "text": "Si el sumiso no cumple una tarea acordada, ¿qué es lo razonable?",
       "explanation": "Antes de asumir incumplimiento, <b>se pregunta</b>. Puede haber cansancio, un imprevisto o el propio límite cambiando — el protocolo no sustituye la comunicación.",
@@ -291,6 +319,7 @@
     },
     {
       "category_slug": "servicio",
+      "level": "amateur",
       "position": 2,
       "text": "Pedir permiso para necesidades básicas (comer, dormir, etc.) dentro de un protocolo de servicio:",
       "explanation": "Cuando existe, <b>su nivel varía mucho</b> — desde algo simbólico hasta más literal. Nunca es un estándar que aplique a todas las parejas por igual.",
@@ -302,6 +331,7 @@
     },
     {
       "category_slug": "apariencia",
+      "level": "amateur",
       "position": 0,
       "text": "Un collar en una relación D/s o M/s suele representar:",
       "explanation": "El collar (o cualquier símbolo equivalente: anillo, brazalete) es <b>un símbolo que la pareja decide qué significa</b> — no hay un significado oficial único.",
@@ -313,6 +343,7 @@
     },
     {
       "category_slug": "apariencia",
+      "level": "amateur",
       "position": 1,
       "text": "¿Puede un sumiso pedir dejar de usar su símbolo (collar, anillo, etc.)?",
       "explanation": "Como cualquier otro elemento del protocolo, <b>puede renegociarse</b>. Ningún símbolo es irreversible si el consentimiento cambia.",
@@ -324,6 +355,7 @@
     },
     {
       "category_slug": "disciplina",
+      "level": "amateur",
       "position": 0,
       "text": "La diferencia clave entre una \"corrección\" acordada y un castigo real de control es:",
       "explanation": "Una corrección tiene sentido cuando <b>ambos han acordado de antemano</b> qué implica y para qué sirve. Si se usa para intimidar o controlar fuera de eso, deja de ser protocolo y se vuelve abuso.",
@@ -335,6 +367,7 @@
     },
     {
       "category_slug": "disciplina",
+      "level": "amateur",
       "position": 1,
       "text": "Si un Amo/Ama aplica una \"corrección\" que nunca se había hablado, ¿qué es esto?",
       "explanation": "Improvisar consecuencias no acordadas <b>rompe el consentimiento</b>. Cualquier corrección debería estar dentro de lo ya negociado.",
@@ -346,6 +379,7 @@
     },
     {
       "category_slug": "disciplina",
+      "level": "amateur",
       "position": 2,
       "text": "¿Las correcciones pueden incluir castigos puramente emocionales (ignorar, humillar sin acuerdo previo)?",
       "explanation": "Cualquier forma de corrección — física o emocional — <b>necesita haberse hablado antes</b>. Sin ese acuerdo, deja de ser protocolo.",
@@ -357,6 +391,7 @@
     },
     {
       "category_slug": "permisos",
+      "level": "amateur",
       "position": 0,
       "text": "Pedir permiso para tocar objetos personales del Amo/Ama o iniciar contacto físico:",
       "explanation": "Como con casi todo el protocolo, <b>es una decisión de pareja</b>, no una regla general del BDSM.",
@@ -368,6 +403,7 @@
     },
     {
       "category_slug": "permisos",
+      "level": "amateur",
       "position": 1,
       "text": "Si el protocolo incluye pedir permiso para algo cotidiano y un día resulta incómodo, ¿qué se hace?",
       "explanation": "El malestar con una parte del protocolo <b>es información</b>, no una falta. Se habla y se adapta.",
@@ -379,6 +415,7 @@
     },
     {
       "category_slug": "negociacion",
+      "level": "amateur",
       "position": 0,
       "text": "Antes de empezar una dinámica nueva con alguien, ¿qué es imprescindible hacer primero?",
       "explanation": "La negociación previa <b>no es opcional</b>, sea cual sea la intensidad de la dinámica. Es la base de todo lo demás.",
@@ -390,6 +427,7 @@
     },
     {
       "category_slug": "negociacion",
+      "level": "amateur",
       "position": 1,
       "text": "¿Qué diferencia hay entre un límite \"duro\" y uno \"blando\"?",
       "explanation": "El límite duro es <b>innegociable</b> pase lo que pase. El blando puede explorarse con más cautela, pero solo si la persona lo decide, nunca por presión.",
@@ -401,6 +439,7 @@
     },
     {
       "category_slug": "negociacion",
+      "level": "amateur",
       "position": 2,
       "text": "¿Por qué es importante hablar del historial médico o físico antes de una escena?",
       "explanation": "Cualquier actividad puede verse afectada por una condición física no evidente. <b>Compartir esta información es parte de cuidar al otro</b>, no un trámite opcional.",
@@ -412,6 +451,7 @@
     },
     {
       "category_slug": "negociacion",
+      "level": "amateur",
       "position": 3,
       "text": "La palabra de seguridad debería ser:",
       "explanation": "Palabras como \"no\" pueden formar parte del juego y perder su función de parada real. Por eso se elige <b>una palabra clara y distinta</b> que ambos reconozcan sin dudas.",
@@ -423,6 +463,7 @@
     },
     {
       "category_slug": "negociacion",
+      "level": "amateur",
       "position": 4,
       "text": "¿Qué sistema se puede usar si la palabra de seguridad no es posible (por ejemplo, con la boca cubierta)?",
       "explanation": "Cuando la voz no está disponible, <b>se acuerda una señal física</b> con el mismo peso que la palabra de seguridad verbal.",
@@ -434,6 +475,7 @@
     },
     {
       "category_slug": "negociacion",
+      "level": "amateur",
       "position": 5,
       "text": "Antes de una escena nueva, hablar de expectativas sirve para:",
       "explanation": "Da igual el nivel de experiencia — <b>las expectativas pueden no coincidir</b> si no se hablan, y eso genera confusión o malestar innecesario.",
@@ -445,6 +487,7 @@
     },
     {
       "category_slug": "negociacion",
+      "level": "amateur",
       "position": 6,
       "text": "Si durante la negociación alguien no está seguro de un límite, ¿qué es lo correcto?",
       "explanation": "La incertidumbre <b>no se resuelve diciendo que sí</b>. Es perfectamente válido dejar algo fuera hasta tenerlo más claro.",
@@ -456,6 +499,7 @@
     },
     {
       "category_slug": "negociacion",
+      "level": "amateur",
       "position": 7,
       "text": "¿La negociación se hace solo una vez, al principio de la relación?",
       "explanation": "Los límites y gustos <b>pueden cambiar</b>. Una negociación inicial no cubre para siempre — se revisa periódicamente o antes de algo nuevo.",
@@ -467,6 +511,7 @@
     },
     {
       "category_slug": "escena",
+      "level": "amateur",
       "position": 0,
       "text": "Los \"check-ins\" durante una escena (preguntar cómo va, cómo se siente) sirven para:",
       "explanation": "Preguntar durante la escena <b>no rompe nada</b> — es parte de cuidar activamente al otro mientras ocurre, no solo antes o después.",
@@ -478,6 +523,7 @@
     },
     {
       "category_slug": "escena",
+      "level": "amateur",
       "position": 1,
       "text": "Si alguien dice la palabra de seguridad, ¿qué debe pasar?",
       "explanation": "La palabra de seguridad <b>no es negociable en el momento</b>. Se para, y ya después —con calma— se habla de qué pasó.",
@@ -489,6 +535,7 @@
     },
     {
       "category_slug": "escena",
+      "level": "amateur",
       "position": 2,
       "text": "Durante bondage, es importante vigilar:",
       "explanation": "Ninguna atadura es \"segura por defecto\". <b>Los signos físicos</b> (color, temperatura, hormigueo) indican si hay que aflojar o liberar algo.",
@@ -500,6 +547,7 @@
     },
     {
       "category_slug": "escena",
+      "level": "amateur",
       "position": 3,
       "text": "Si alguien parece ido o desconectado durante una escena pero no ha dicho nada, ¿qué es recomendable?",
       "explanation": "No todo el mundo verbaliza malestar en el momento. <b>Observar y preguntar</b> es responsabilidad de quien dirige la escena, no solo esperar a que el otro hable.",
@@ -511,6 +559,7 @@
     },
     {
       "category_slug": "escena",
+      "level": "amateur",
       "position": 4,
       "text": "Un \"subspace\" (estado alterado de conciencia durante la escena) requiere:",
       "explanation": "El subspace puede afectar el juicio y la capacidad de comunicarse con claridad. <b>Quien dirige debe estar más atento</b>, no menos, en ese estado.",
@@ -522,6 +571,7 @@
     },
     {
       "category_slug": "escena",
+      "level": "amateur",
       "position": 5,
       "text": "Si algo no estaba planeado surge durante la escena (una idea nueva, algo no negociado), ¿qué se hace?",
       "explanation": "Lo no negociado <b>no se improvisa sobre la marcha</b>. Cualquier cosa nueva necesita su propio consentimiento explícito, aunque ya estén en medio de algo.",
@@ -533,6 +583,7 @@
     },
     {
       "category_slug": "cierre",
+      "level": "amateur",
       "position": 0,
       "text": "El aftercare (cuidado posterior) sirve para:",
       "explanation": "El aftercare <b>no es un extra opcional</b> — ayuda a procesar lo vivido, física y emocionalmente, para ambas personas, no solo para quien fue sumiso.",
@@ -544,6 +595,7 @@
     },
     {
       "category_slug": "cierre",
+      "level": "amateur",
       "position": 1,
       "text": "Las necesidades de aftercare:",
       "explanation": "Algunas personas necesitan abrazos y silencio, otras espacio y agua, otras hablar. <b>No hay una receta única</b> — se pregunta o se conoce con el tiempo.",
@@ -555,6 +607,7 @@
     },
     {
       "category_slug": "cierre",
+      "level": "amateur",
       "position": 2,
       "text": "¿Quién puede necesitar aftercare después de una escena?",
       "explanation": "El \"top drop\" (bajón emocional de quien dirige la escena) es real. <b>El cuidado posterior no es solo para el sumiso.</b>",
@@ -566,6 +619,7 @@
     },
     {
       "category_slug": "cierre",
+      "level": "amateur",
       "position": 3,
       "text": "Un \"check-in posterior\" (horas o días después) sirve para:",
       "explanation": "Algunas reacciones o pensamientos <b>aparecen después</b>, no en el momento. Revisar con perspectiva ayuda a detectar algo que no se vio al principio.",
@@ -577,6 +631,7 @@
     },
     {
       "category_slug": "cierre",
+      "level": "amateur",
       "position": 4,
       "text": "Un \"debrief\" (hablar de qué funcionó y qué no) después de una escena:",
       "explanation": "Hablar después, <b>incluso cuando todo fue bien</b>, ayuda a entender qué funcionó y a seguir ajustando el protocolo a lo que de verdad quieren ambos.",
@@ -588,6 +643,7 @@
     },
     {
       "category_slug": "cierre",
+      "level": "amateur",
       "position": 5,
       "text": "Si después de una escena alguien se siente mal pero no sabe exactamente por qué, ¿qué es razonable?",
       "explanation": "No hace falta tener una explicación exacta para que algo merezca hablarse. <b>El malestar es válido igual</b>, se entienda del todo o no.",
@@ -595,6 +651,84 @@
         { "text": "Ignorarlo, ya se le pasará", "is_correct": false, "position": 0 },
         { "text": "Hablarlo de todos modos, aunque no tenga una razón clara", "is_correct": true, "position": 1 },
         { "text": "Asumir que la escena estuvo mal planteada", "is_correct": false, "position": 2 }
+      ]
+    },
+    {
+      "category_slug": "bondage",
+      "level": "master",
+      "position": 0,
+      "text": "Durante una atadura larga, la persona atada usa la palabra de seguridad. Quien ata empieza a liberarla, pero nota que una de las cuerdas está generando más presión de la esperada en una articulación. ¿Qué dicta el protocolo sobre el orden de liberación?",
+      "explanation": "El protocolo de liberación <b>no es un ritual fijo e inamovible</b> — prioriza el bienestar físico inmediato. Un punto de presión excesiva se libera primero aunque eso rompa la secuencia \"lógica\" de desatado. Cortar cuerdas de golpe se reserva solo para emergencias reales (pánico, pérdida de conciencia), no como método por defecto.",
+      "options": [
+        { "text": "Se libera en el orden inverso exacto al que se ató, es la única forma segura", "is_correct": false, "position": 0 },
+        { "text": "Se prioriza liberar primero el punto de mayor presión, aunque se rompa el orden habitual", "is_correct": true, "position": 1 },
+        { "text": "Se corta la cuerda entera de un solo tirón para ir más rápido", "is_correct": false, "position": 2 },
+        { "text": "Se espera a que la persona confirme verbalmente cada paso antes de continuar", "is_correct": false, "position": 3 }
+      ]
+    },
+    {
+      "category_slug": "bondage",
+      "level": "master",
+      "position": 1,
+      "text": "Dos personas negocian una escena de bondage. Una de ellas pide explícitamente \"no quiero que pares aunque diga basta, solo si digo la palabra de seguridad\". ¿Cómo debe tratarse esta petición dentro del protocolo?",
+      "explanation": "Este tipo de acuerdo <b>sí existe y puede negociarse</b> — no es automáticamente inválido. Pero acordar ignorar \"basta\" no elimina la responsabilidad de quien dirige la escena de vigilar señales de malestar genuino más allá de lo verbal; el acuerdo cubre las palabras, no exime del cuidado físico y emocional real.",
+      "options": [
+        { "text": "Es una petición válida y debe respetarse tal cual una vez acordada", "is_correct": false, "position": 0 },
+        { "text": "Es una petición que se puede negociar y aceptar, pero exige extremar la atención a señales no verbales de malestar real", "is_correct": true, "position": 1 },
+        { "text": "Nunca debe aceptarse, \"basta\" siempre debe detener la escena", "is_correct": false, "position": 2 },
+        { "text": "Solo es válida si se firma un documento de consentimiento", "is_correct": false, "position": 3 }
+      ]
+    },
+    {
+      "category_slug": "cuerdas",
+      "level": "master",
+      "position": 0,
+      "text": "En una sesión de shibari con público, el rigger nota que el modelo hace un gesto sutil de incomodidad que no forma parte de la coreografía, pero no dice ninguna palabra de seguridad. ¿Qué indica el protocolo en este caso?",
+      "explanation": "La presión de tener público <b>puede hacer que alguien dude en usar la palabra de seguridad</b> por vergüenza o por no \"romper\" el espectáculo. Un buen protocolo no depende solo de la palabra pactada — exige leer señales cuando el contexto puede estar silenciando a la persona. Detenerse a comprobar no es lo mismo que terminar de golpe: se pregunta primero.",
+      "options": [
+        { "text": "Continuar, ya que no se ha usado la palabra de seguridad acordada", "is_correct": false, "position": 0 },
+        { "text": "Detenerse a comprobar, incluso sin palabra de seguridad, porque el contexto de público puede inhibir su uso", "is_correct": true, "position": 1 },
+        { "text": "Terminar la exhibición inmediatamente sin preguntar nada", "is_correct": false, "position": 2 },
+        { "text": "Esperar a que termine la coreografía planeada antes de comprobar", "is_correct": false, "position": 3 }
+      ]
+    },
+    {
+      "category_slug": "cuerdas",
+      "level": "master",
+      "position": 1,
+      "text": "El término \"aisatsu\" en algunas tradiciones de shibari se refiere a un momento ritual de conexión antes de atar. Si un rigger occidental sin formación en esa tradición específica no lo incluye en su sesión, ¿qué es correcto afirmar?",
+      "explanation": "Como con tantas cosas en este quiz, <b>no existe un protocolo único y universal del shibari</b>. El aisatsu es parte de tradiciones concretas; no seguirlo fuera de ellas no es una falta de protocolo, es simplemente otro estilo.",
+      "options": [
+        { "text": "Está rompiendo el protocolo universal del shibari", "is_correct": false, "position": 0 },
+        { "text": "No es una falta: el aisatsu pertenece a una tradición concreta, no es un requisito obligatorio fuera de ella", "is_correct": true, "position": 1 },
+        { "text": "Solo se puede omitir si el modelo es principiante", "is_correct": false, "position": 2 },
+        { "text": "Es obligatorio en cualquier atadura decorativa, aunque no sea japonesa", "is_correct": false, "position": 3 }
+      ]
+    },
+    {
+      "category_slug": "spanking",
+      "level": "master",
+      "position": 0,
+      "text": "En una escena con sistema de semáforo (verde/amarillo/rojo), la persona dice \"amarillo\" varias veces seguidas sin que quien golpea reduzca la intensidad, porque interpreta que \"amarillo\" solo es informativo, no una instrucción de cambio. ¿Es correcta esa interpretación?",
+      "explanation": "Aunque el significado exacto de cada color puede variar levemente entre parejas, <b>la función del \"amarillo\" en cualquier sistema de semáforo es señalar que algo necesita atención o ajuste</b> — tratarlo como un dato pasivo sin efecto es malinterpretar la herramienta, no una opción neutra válida.",
+      "options": [
+        { "text": "Sí, \"amarillo\" solo informa, la persona debe decir directamente \"menos intensidad\"", "is_correct": false, "position": 0 },
+        { "text": "No: \"amarillo\" es, por definición del propio sistema, una señal de que hay que ajustar, no un dato neutro", "is_correct": true, "position": 1 },
+        { "text": "Depende de si se negoció \"amarillo\" como \"más\" o \"menos\" antes de la escena", "is_correct": false, "position": 2 },
+        { "text": "\"Amarillo\" y \"rojo\" significan exactamente lo mismo en la mayoría de sistemas", "is_correct": false, "position": 3 }
+      ]
+    },
+    {
+      "category_slug": "spanking",
+      "level": "master",
+      "position": 1,
+      "text": "Alguien argumenta que, si ya se negoció la escena e intensidad al principio, no hace falta ningún check-in verbal durante el impact play, porque \"ya se sabe lo que se va a hacer\". ¿Qué falla en ese razonamiento?",
+      "explanation": "Negociar antes <b>no es un cheque en blanco</b> para toda la escena. El cuerpo y el estado emocional cambian en tiempo real — el consentimiento se sostiene durante toda la interacción, no solo se firma al principio.",
+      "options": [
+        { "text": "Nada, si ya está negociado no hace falta más comunicación", "is_correct": false, "position": 0 },
+        { "text": "La negociación previa cubre expectativas generales, pero no sustituye el consentimiento continuo momento a momento", "is_correct": true, "position": 1 },
+        { "text": "Solo falla si la escena dura más de 20 minutos", "is_correct": false, "position": 2 },
+        { "text": "Falla porque toda escena debe negociarse dos veces, antes y a mitad", "is_correct": false, "position": 3 }
       ]
     }
   ]
