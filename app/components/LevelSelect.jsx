@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import ProtocolIcon from "./ProtocolIcon";
 import Shell, { SecondaryButton } from "./Shell";
@@ -77,6 +78,21 @@ export default function LevelSelect({ onSelect }) {
         </p>
       </div>
       {list}
+
+      <div className="mt-[1.6rem] border-t border-line pt-[1.4rem]">
+        <Link
+          href="/coach"
+          className="flex items-center justify-between gap-3 rounded-[5px] border border-accent/60 bg-accent/[0.08] px-4 py-[0.95rem] text-ink transition-[border-color,transform] duration-150 ease-in-out hover:border-accent-soft active:scale-[0.995]"
+        >
+          <span>
+            <span className="block font-serif text-[1.15rem] font-medium">Modo coach</span>
+            <span className="block text-[0.8rem] text-ink-dim">
+              Un experto te examina en una conversación de 20 preguntas
+            </span>
+          </span>
+          <span aria-hidden="true" className="text-accent-soft">→</span>
+        </Link>
+      </div>
     </Shell>
   );
 }
