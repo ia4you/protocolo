@@ -8,6 +8,16 @@ const STORAGE_KEY = "protocolo:coach";
 const TOTAL_QUESTIONS = 20;
 const MAX_CHARS = 2000;
 const UNAVAILABLE = "El experto no está disponible ahora mismo.";
+// "Autodestrucción" del turno anterior: se quema (BURN_MS) y deja un rescoldo (EMBER_MS)
+const BURN_MS = 700;
+const EMBER_MS = 300;
+
+// Índice donde empieza el turno actual: el último mensaje del experto (su
+// evaluación + la pregunta vigente), seguido de la respuesta del usuario si la hay
+function currentTurnStart(messages) {
+  for (let i = messages.length - 1; i >= 0; i--) if (messages[i].role === "assistant") return i;
+  return 0;
+}
 
 function restoreChat() {
   try {
@@ -17,7 +27,10 @@ function restoreChat() {
       saved.messages.every(
         (m) => (m?.role === "user" || m?.role === "assistant") && typeof m.content === "string"
       );
-    if (valid) return { messages: saved.messages, finished: Boolean(saved.finished) };
+    if (valid) {
+      const score = Number.isInteger(saved.score) && saved.score >= 1 && saved.score <= 10 ? saved.score : null;
+      return { messages: saved.messages, finished: Boolean(saved.finished), score };
+    }
   } catch {}
   return null;
 }
@@ -36,10 +49,14 @@ function renderText(text) {
 }
 
 export default function Coach() {
-  const [chat, setChat] = useState(null); // { messages, finished }
+  const [chat, setChat] = useState(null); // { messages, finished, score }
   const [pending, setPending] = useState(false);
   const [error, setError] = useState(null);
   const [draft, setDraft] = useState("");
+  // Solo se pintan los mensajes desde shownFrom; el historial completo sigue
+  // guardándose (el modelo lo necesita y sobrevive a recargas)
+  const [shownFrom, setShownFrom] = useState(0);
+  const [phase, setPhase] = useState("idle"); // idle | burning | ember
   const endRef = useRef(null);
   const started = useRef(false);
 
@@ -59,6 +76,7 @@ export default function Coach() {
       setChat((c) => ({
         messages: [...c.messages, { role: "assistant", content: data.reply }],
         finished: data.finished,
+        score: data.score ?? null,
       }));
     } catch (err) {
       setError(err.name === "TypeError" ? UNAVAILABLE : err.message);
@@ -73,12 +91,13 @@ export default function Coach() {
     const saved = restoreChat();
     if (saved?.messages.length) {
       setChat(saved);
+      setShownFrom(currentTurnStart(saved.messages));
       // Se recargó mientras se esperaba respuesta: se ofrece reintentar
       if (!saved.finished && saved.messages.at(-1).role === "user") {
         setError("La última respuesta del experto no llegó.");
       }
     } else {
-      setChat({ messages: [], finished: false });
+      setChat({ messages: [], finished: false, score: null });
       request([]);
     }
   }, [request]);
@@ -93,6 +112,28 @@ export default function Coach() {
   useEffect(() => {
     endRef.current?.scrollIntoView({ block: "end", behavior: "smooth" });
   }, [chat?.messages.length, pending, error]);
+
+  // Al llegar la siguiente respuesta del experto, el turno anterior se quema,
+  // queda un rescoldo y después aparece el nuevo
+  const liveFrom = currentTurnStart(chat?.messages ?? []);
+  useEffect(() => {
+    if (liveFrom <= shownFrom) return;
+    const reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    if (reduceMotion) {
+      setShownFrom(liveFrom);
+      return;
+    }
+    setPhase("burning");
+    const toEmber = setTimeout(() => setPhase("ember"), BURN_MS);
+    const done = setTimeout(() => {
+      setShownFrom(liveFrom);
+      setPhase("idle");
+    }, BURN_MS + EMBER_MS);
+    return () => {
+      clearTimeout(toEmber);
+      clearTimeout(done);
+    };
+  }, [liveFrom, shownFrom]);
 
   function send(e) {
     e?.preventDefault();
@@ -116,7 +157,9 @@ export default function Coach() {
       sessionStorage.removeItem(STORAGE_KEY);
     } catch {}
     setDraft("");
-    setChat({ messages: [], finished: false });
+    setShownFrom(0);
+    setPhase("idle");
+    setChat({ messages: [], finished: false, score: null });
     request([]);
   }
 
@@ -126,7 +169,8 @@ export default function Coach() {
   const asked = messages.filter((m) => m.role === "assistant").length;
   const current = Math.min(Math.max(asked, 1), TOTAL_QUESTIONS);
   const progress = finished ? 100 : (Math.max(asked - 1, 0) / TOTAL_QUESTIONS) * 100;
-  const inputDisabled = !chat || pending || finished || Boolean(error);
+  const transitioning = liveFrom > shownFrom;
+  const inputDisabled = !chat || pending || finished || Boolean(error) || transitioning;
 
   return (
     <Shell
@@ -147,22 +191,34 @@ export default function Coach() {
       }
     >
       <div className="flex flex-col gap-3" aria-live="polite">
-        {messages.map((m, i) =>
-          m.role === "assistant" ? (
-            <div key={i} className="max-w-[88%] self-start">
-              <div className="mb-1 text-[0.7rem] tracking-[0.03em] text-accent-soft">El experto</div>
-              <div className="whitespace-pre-wrap rounded-[10px] rounded-tl-[3px] border border-line bg-bg-2 px-4 py-3 text-[0.95rem] leading-[1.5] text-ink">
-                {renderText(m.content)}
-              </div>
-            </div>
-          ) : (
+        {transitioning ? (
+          phase === "ember" ? (
             <div
-              key={i}
-              className="max-w-[85%] self-end whitespace-pre-wrap rounded-[10px] rounded-tr-[3px] border border-accent/60 bg-accent/[0.16] px-4 py-3 text-[0.95rem] leading-[1.5] text-ink"
-            >
-              {m.content}
+              aria-hidden="true"
+              className="my-8 h-0.5 animate-ember rounded-full bg-gradient-to-r from-transparent via-accent-soft to-transparent shadow-[0_0_14px_2px_rgba(201,106,84,0.45)]"
+            />
+          ) : (
+            <div aria-hidden="true" className="flex animate-burn flex-col gap-3">
+              {messages.slice(shownFrom, liveFrom).map((m, i) => (
+                <Bubble key={shownFrom + i} message={m} />
+              ))}
             </div>
           )
+        ) : (
+          messages.slice(shownFrom).map((m, i) => (
+            <Bubble key={shownFrom + i} message={m} animate={m.role === "assistant"} />
+          ))
+        )}
+        {!transitioning && finished && chat.score !== null && (
+          <div className="mt-2 animate-rise rounded-md border border-accent/60 bg-accent/[0.08] px-5 py-6 text-center">
+            <div className="text-[0.72rem] uppercase tracking-[0.08em] text-accent-soft">
+              Puntuación final
+            </div>
+            <div className="mt-2 font-serif text-[3.2rem] font-medium leading-none tabular-nums text-ink">
+              {chat.score}
+              <span className="text-[1.5rem] text-ink-dim">/10</span>
+            </div>
+          </div>
         )}
         {pending && (
           <div className="self-start text-[0.85rem] italic text-ink-dim">
@@ -219,5 +275,23 @@ export default function Coach() {
         </div>
       </form>
     </Shell>
+  );
+}
+
+function Bubble({ message, animate = false }) {
+  if (message.role === "assistant") {
+    return (
+      <div className={`max-w-[88%] self-start ${animate ? "animate-rise" : ""}`}>
+        <div className="mb-1 text-[0.7rem] tracking-[0.03em] text-accent-soft">El experto</div>
+        <div className="whitespace-pre-wrap rounded-[10px] rounded-tl-[3px] border border-line bg-bg-2 px-4 py-3 text-[0.95rem] leading-[1.5] text-ink">
+          {renderText(message.content)}
+        </div>
+      </div>
+    );
+  }
+  return (
+    <div className="max-w-[85%] self-end whitespace-pre-wrap rounded-[10px] rounded-tr-[3px] border border-accent/60 bg-accent/[0.16] px-4 py-3 text-[0.95rem] leading-[1.5] text-ink">
+      {message.content}
+    </div>
   );
 }

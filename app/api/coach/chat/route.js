@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { COACH_SYSTEM_PROMPT } from "@/lib/coach-prompt";
+import { COACH_GREETING, COACH_SYSTEM_PROMPT } from "@/lib/coach-prompt";
 import { clientIp, rateLimit } from "@/lib/rate-limit";
 
 export const dynamic = "force-dynamic";
@@ -36,13 +36,15 @@ function tooMany(what, retryAfter) {
   );
 }
 
-function modelParams(model) {
+// En la apertura, gpt-oss con razonamiento "low" se niega a menudo con el
+// tono del prompt ("I'm sorry, but I can't help with that"); con "medium" casi nunca.
+function modelParams(model, opening) {
   if (model.startsWith("qwen/")) return { reasoning_effort: "none" };
-  if (model.startsWith("openai/gpt-oss")) return { reasoning_effort: "low" };
+  if (model.startsWith("openai/gpt-oss")) return { reasoning_effort: opening ? "medium" : "low" };
   return {};
 }
 
-// Los modelos a veces repiten el contador ("**Pregunta 9 de 20**", "Tema 18:")
+// Los modelos a veces repiten el contador ("**Pregunta 9 de 20**", "Pregunta 4:", "Tema 18:")
 // o se inventan el siguiente turno del usuario ("[Pregunta 4 de 20] Pues…").
 function cleanReply(text) {
   let t = text.replace(/<think>[\s\S]*?<\/think>/g, "");
@@ -52,11 +54,28 @@ function cleanReply(text) {
     .replace(/^\s*\[Pregunta \d+ de \d+\]\s*/i, "")
     .replace(/^[ \t]*\**[ \t]*Pregunta \d+ de \d+[ \t]*\**[ \t]*:?[ \t]*$\n?/gim, "")
     .replace(/\**\bpregunta \d+ de \d+\b\**/gi, "siguiente pregunta")
-    .replace(/\**\bTema \d+\b\**\s*:?[ \t]*/g, "")
+    .replace(/\**\b(?:Tema|Pregunta) \d+\b\**\s*:\**[ \t]*/gi, "")
+    .replace(/\**\bTema \d+\b\**[ \t]*/g, "")
     .trim();
 }
 
-async function callGroq(model, messages) {
+// Despedida: extrae "PUNTUACIÓN: X/10" (tolera negritas y la falta de tilde)
+// y la quita del texto, que se muestra aparte como número destacado.
+const SCORE_LINE = /^[ \t]*\**[ \t]*PUNTUACI[OÓ]N[ \t]*:?[ \t]*\**[ \t]*(\d{1,2})[ \t]*\/[ \t]*10[ \t]*\**[ \t]*$/im;
+
+// La escala se presenta "/10" pero el tope real es 7 (también lo pide el
+// prompt); si el modelo pone más, se rebaja aquí.
+const MAX_SCORE = 7;
+
+function extractScore(reply) {
+  const match = reply.match(SCORE_LINE);
+  const raw = match ? Number(match[1]) : NaN;
+  if (!(raw >= 1 && raw <= 10)) return { reply, score: null };
+  if (raw > MAX_SCORE) console.warn(`POST /api/coach/chat: puntuación ${raw}/10 rebajada a ${MAX_SCORE}`);
+  return { reply: reply.replace(SCORE_LINE, "").trim(), score: Math.min(raw, MAX_SCORE) };
+}
+
+async function callGroq(model, messages, opening) {
   const res = await fetch(GROQ_URL, {
     method: "POST",
     headers: {
@@ -68,7 +87,7 @@ async function callGroq(model, messages) {
       messages,
       temperature: 0.7,
       max_tokens: 1024,
-      ...modelParams(model),
+      ...modelParams(model, opening),
     }),
     signal: AbortSignal.timeout(30_000),
   });
@@ -76,7 +95,15 @@ async function callGroq(model, messages) {
     throw new Error(`Groq ${res.status}: ${(await res.text().catch(() => "")).slice(0, 300)}`);
   }
   const data = await res.json();
-  return cleanReply(data.choices?.[0]?.message?.content ?? "");
+  const choice = data.choices?.[0];
+  const reply = cleanReply(choice?.message?.content ?? "");
+  if (!reply) {
+    console.warn(
+      `POST /api/coach/chat: respuesta vacía de ${model} (finish_reason=${choice?.finish_reason})`,
+      JSON.stringify(choice?.message ?? null).slice(0, 400)
+    );
+  }
+  return reply;
 }
 
 // Cuerpo: { history: [{ role: "user" | "assistant", content }], message? }
@@ -143,15 +170,29 @@ export async function POST(request) {
   try {
     const model = opening ? OPENING_MODEL : MODEL;
     let reply = "";
-    // Salvo en la despedida, cada respuesta debe plantear una pregunta; si
-    // llega cortada o se despide antes de tiempo, se regenera (MAX_ATTEMPTS).
-    for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
-      reply = await callGroq(model, messages);
-      if (reply && (finished || reply.includes("?"))) break;
-      console.warn(`POST /api/coach/chat: respuesta sin pregunta en turno ${turn} (intento ${attempt})`);
+    let score = null;
+    let valid = false;
+    // La apertura debe empezar por el saludo exacto (si no, suele ser una
+    // negativa del modelo), cada respuesta debe plantear una pregunta y la
+    // despedida traer la puntuación; si no, se regenera (MAX_ATTEMPTS).
+    for (let attempt = 1; attempt <= MAX_ATTEMPTS && !valid; attempt++) {
+      // qwen a veces devuelve contenido vacío de forma persistente para un
+      // historial concreto: el último intento se hace con el modelo de apertura
+      const attemptModel = attempt === MAX_ATTEMPTS ? OPENING_MODEL : model;
+      reply = await callGroq(attemptModel, messages, opening);
+      if (finished) {
+        ({ reply, score } = extractScore(reply));
+        valid = Boolean(reply) && score !== null;
+      } else {
+        valid = reply.includes("?") && (!opening || reply.startsWith(COACH_GREETING));
+      }
+      if (!valid) console.warn(`POST /api/coach/chat: respuesta no válida en turno ${opening ? 0 : turn} (intento ${attempt})`);
     }
-    if (!reply) return fail("El experto se ha quedado sin palabras. Inténtalo de nuevo", 502);
-    return NextResponse.json({ reply, turn: opening ? 0 : turn, finished });
+    // Una apertura sin saludo es una negativa: mejor error con "Reintentar" que mostrarla
+    if (!reply || (opening && !valid)) {
+      return fail("El experto se ha quedado sin palabras. Inténtalo de nuevo", 502);
+    }
+    return NextResponse.json({ reply, turn: opening ? 0 : turn, finished, score });
   } catch (err) {
     console.error("POST /api/coach/chat:", err);
     return fail(UNAVAILABLE, 502);
